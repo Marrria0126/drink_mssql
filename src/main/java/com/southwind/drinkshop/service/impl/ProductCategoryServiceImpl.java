@@ -69,7 +69,7 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
                 levelTwoProductCategoryVO.setChildren(levelThreeVO);
             }
         }
-        return null;
+        return levelOneVO;
 
     }
 }
