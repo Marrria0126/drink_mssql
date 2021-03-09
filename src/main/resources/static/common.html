@@ -116,7 +116,7 @@
     <!-- search -->
     <div class="top">
         <div class="logo">
-            <a href="/main.html"><img src="/images/logo.png" style="width: 230px;border:0px solid red;"></a>
+            <a href="/productCategory/list"><img src="/images/logo.png" style="width: 230px;border:0px solid red;"></a>
         </div>
         <div class="search">
             <form action="/productList.html" method="post">
@@ -198,9 +198,9 @@
                 </div>
             </div>
             <ul class="menu_r">
-                <li><a href="/main.html">首页</a></li>
-                <li>
-                    <a href="/productList.html">一级分类</a>
+                <li><a href="/productCategory/list">首页</a></li>
+                <li th:each="productCategory:${list}">
+                    <a th:href="'/product/list/one/'+${productCategory.id}" th:text="${productCategory.name}"></a>
                 </li>
             </ul>
         </div>

@@ -36,11 +36,11 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
         wrapper.eq("type",1);
         List<ProductCategory> levelOne = productCategoryMapper.selectList(wrapper);
         List<ProductCategoryVO> levelOneVO = levelOne.stream().map(e -> new ProductCategoryVO(e.getId(),e.getName())).collect(Collectors.toList());
-//        //图片赋值
-//        //商品信息赋值
-//        for (int i = 0; i < levelOneVO.size(); i++) {
-//            levelOneVO.get(i).setBannerImg("/images/banner"+i+".png");
-//            levelOneVO.get(i).setTopImg("/images/top"+i+".png");
+        //图片赋值
+        //商品信息赋值
+        for (int i = 0; i < levelOneVO.size(); i++) {
+            levelOneVO.get(i).setBannerImg("/images/banner"+i+".png");
+            levelOneVO.get(i).setTopImg("/images/top"+i+".png");
 //            wrapper = new QueryWrapper();
 //            wrapper.eq("categorylevelone_id",levelOneVO.get(i).getId());
 //            List<Product> productList = productMapper.selectList(wrapper);
@@ -52,7 +52,7 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
 //                            e.getFileName()
 //                    )).collect(Collectors.toList());
 //            levelOneVO.get(i).setProductVOList(productVOList);
-//        }
+       }
         for (ProductCategoryVO levelOneProductCategoryVO : levelOneVO) {
             wrapper = new QueryWrapper();
             wrapper.eq("type",2);
