@@ -13,11 +13,11 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author Yihong
- * @since 2021-03-06
+ * @since 2021-03-10
  */
 @Data
   @EqualsAndHashCode(callSuper = false)
-    public class User implements Serializable {
+    public class User1 implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

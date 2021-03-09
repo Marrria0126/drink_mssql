@@ -9,8 +9,11 @@ public class RedirectHandler {
 
     @GetMapping("/{url}")
     public String redirect(@PathVariable("url") String url){
-          return url;
-
+        return url;
     }
 
+    @GetMapping("/")
+    public String main(){
+        return "redirect:/productCategory/list";
+    }
 }

@@ -1,6 +1,6 @@
 package com.southwind.drinkshop.mapper;
 
-import com.southwind.drinkshop.entity.User;
+import com.southwind.drinkshop.entity.User1;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author Yihong
- * @since 2021-03-06
+ * @since 2021-03-10
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface User1Mapper extends BaseMapper<User1> {
 
 }
