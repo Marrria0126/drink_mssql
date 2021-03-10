@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.southwind.drinkshop.entity.User1;
 import com.southwind.drinkshop.service.User1Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,27 @@ public class User1Controller {
 
     @Autowired
     private User1Service user1Service;
+
+    @PostMapping("/register")
+    public String register(User1 user){
+//        boolean result = false;
+//        try {
+//            if(user.getGenderCode() == 1){
+//                user.setGender(GenderEnum.MAN);
+//            }
+//            if(user.getGenderCode() == 0){
+//                user.setGender(GenderEnum.WOMAN);
+//            }
+//            result = userService.save(user);
+//        } catch (Exception e) {
+//            model.addAttribute("error",user.getLoginName()+"已存在！请重新输入！");
+//            return "register";
+//        }
+//        if(result) return "login";
+//        return "register";
+        return "login";
+    }
+
 
     /**
      * 登录
