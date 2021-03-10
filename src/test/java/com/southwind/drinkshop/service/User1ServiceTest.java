@@ -14,12 +14,12 @@ class User1ServiceTest {
     private User1Service service;
     @Test
     void test(){
-        User1 user = new User1();
-        user.setLoginName("jq1");
-        user.setUserName("123");
-        user.setPassword("123");
-        user.setGender(1);
-        System.out.println(service.save(user));
+        User1 user1 = new User1();
+        user1.setLoginName("yihong");
+        user1.setUserName("xiayihong");
+        user1.setPassword("qwert");
+        user1.setGender(2);
+        System.out.println(service.save(user1));
 
 
     }
