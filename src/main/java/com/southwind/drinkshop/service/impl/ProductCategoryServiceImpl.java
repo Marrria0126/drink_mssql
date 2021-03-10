@@ -1,12 +1,14 @@
 package com.southwind.drinkshop.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.southwind.drinkshop.entity.Product;
 import com.southwind.drinkshop.entity.ProductCategory;
 import com.southwind.drinkshop.mapper.ProductCategoryMapper;
 import com.southwind.drinkshop.mapper.ProductMapper;
 import com.southwind.drinkshop.service.ProductCategoryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.southwind.drinkshop.vo.ProductCategoryVO;
+import com.southwind.drinkshop.vo.ProductVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,17 +43,17 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
         for (int i = 0; i < levelOneVO.size(); i++) {
             levelOneVO.get(i).setBannerImg("/images/banner"+i+".png");
             levelOneVO.get(i).setTopImg("/images/top"+i+".png");
-//            wrapper = new QueryWrapper();
-//            wrapper.eq("categorylevelone_id",levelOneVO.get(i).getId());
-//            List<Product> productList = productMapper.selectList(wrapper);
-//            List<ProductVO> productVOList = productList.stream()
-//                    .map(e -> new ProductVO(
-//                            e.getId(),
-//                            e.getName(),
-//                            e.getPrice(),
-//                            e.getFileName()
-//                    )).collect(Collectors.toList());
-//            levelOneVO.get(i).setProductVOList(productVOList);
+            wrapper = new QueryWrapper();
+            wrapper.eq("categorylevelone_id",levelOneVO.get(i).getId());
+            List<Product> productList = productMapper.selectList(wrapper);
+            List<ProductVO> productVOList = productList.stream()
+                    .map(e -> new ProductVO(
+                            e.getId(),
+                            e.getName(),
+                            e.getPrice(),
+                            e.getFileName()
+                    )).collect(Collectors.toList());
+            levelOneVO.get(i).setProductVOList(productVOList);
        }
         for (ProductCategoryVO levelOneProductCategoryVO : levelOneVO) {
             wrapper = new QueryWrapper();

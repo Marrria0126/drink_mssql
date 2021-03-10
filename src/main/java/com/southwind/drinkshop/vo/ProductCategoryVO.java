@@ -11,7 +11,7 @@ public class ProductCategoryVO {
     private List<ProductCategoryVO> children;
     private String bannerImg;
     private String topImg;
-  //  private List<ProductVO> productVOList;
+    private List<ProductVO> productVOList;
 
      public ProductCategoryVO(Integer id, String name) {
          this.id = id;
