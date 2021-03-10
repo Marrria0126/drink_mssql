@@ -30,23 +30,23 @@ public class User1Controller {
     private User1Service user1Service;
 
     @PostMapping("/register")
-    public String register(User1 user){
-//        boolean result = false;
-//        try {
+    public String register(User1 user, Model model){
+        boolean result = false;
+        try {
 //            if(user.getGenderCode() == 1){
 //                user.setGender(GenderEnum.MAN);
 //            }
 //            if(user.getGenderCode() == 0){
 //                user.setGender(GenderEnum.WOMAN);
 //            }
-//            result = userService.save(user);
-//        } catch (Exception e) {
-//            model.addAttribute("error",user.getLoginName()+"已存在！请重新输入！");
-//            return "register";
-//        }
-//        if(result) return "login";
-//        return "register";
-        return "login";
+            result = user1Service.save(user);
+        } catch (Exception e) {
+            model.addAttribute("error",user.getLoginName()+"已存在！请重新输入！");
+            return "register";
+        }
+        if(result) return "login";
+        return "register";
+
     }
 
 
