@@ -20,8 +20,6 @@ class User1ServiceTest {
         user1.setPassword("qwert");
         user1.setGender(2);
         System.out.println(service.save(user1));
-
-
     }
 
 }
