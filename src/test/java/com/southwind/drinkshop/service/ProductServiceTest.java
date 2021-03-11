@@ -24,4 +24,9 @@ class ProductServiceTest {
         service.listByMap(map).forEach(System.out::println);
     }
 
+     @Test
+    void get(){
+        System.out.println(service.getById(733));
+
+     }
 }

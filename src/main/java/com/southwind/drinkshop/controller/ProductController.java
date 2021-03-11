@@ -39,11 +39,11 @@ public class ProductController {
               @PathVariable("type") String type,
               @PathVariable("id") Integer id
 //            HttpSession session
-    ){
+    ) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("productList");
-        modelAndView.addObject("productList",productService.findByCategoryId(type,id));
-        modelAndView.addObject("list",productCategoryService.getAllProductCategoryVO());
+        modelAndView.addObject("productList", productService.findByCategoryId(type, id));
+        modelAndView.addObject("list", productCategoryService.getAllProductCategoryVO());
 //        User user = (User)session.getAttribute("user");
 //        if(user == null){
 //            modelAndView.addObject("cartList",new ArrayList<>());
@@ -69,27 +69,28 @@ public class ProductController {
 //            modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
 //        }
 //        return modelAndView;
-//    }
+    }
 //
-//    @GetMapping("/findById/{id}")
-//    public ModelAndView findById(@PathVariable("id") Integer id,HttpSession session){
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("productDetail");
-//        modelAndView.addObject("product",productService.getById(id));
-//        modelAndView.addObject("list",productCategoryService.getAllProductCategoryVO());
+        @GetMapping("/findById/{id}")
+        public ModelAndView findById(@PathVariable("id") Integer id){
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.setViewName("productDetail");
+            modelAndView.addObject("product", productService.getById(id));
+            modelAndView.addObject("list",productCategoryService.getAllProductCategoryVO());
 //        User user = (User)session.getAttribute("user");
 //        if(user == null){
 //            modelAndView.addObject("cartList",new ArrayList<>());
 //        }else{
 //            modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
 //        }
-//        return modelAndView;
+            return modelAndView;
 //    }
 //
 //    @RequestMapping("/findAllTableProduct")
 //    @ResponseBody
 //    public TableDataVO<TableProductVO> findAllTableProduct(Integer page,Integer limit){
 //        return productService.findAllTableData(page, limit);
+
     }
 }
 

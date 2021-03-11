@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * @since 2021-03-06
  */
 @Controller
-@RequestMapping("//productCategory")
+@RequestMapping("/productCategory")
 public class ProductCategoryController {
     @Autowired
     private ProductCategoryService productCategoryService;
