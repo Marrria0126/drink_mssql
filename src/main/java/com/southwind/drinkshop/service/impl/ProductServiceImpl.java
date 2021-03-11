@@ -34,9 +34,9 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 //    private ProductCategoryMapper productCategoryMapper;
 
     @Override
-    public List<Product> findByCategoryId(Integer categoryId) {
+    public List<Product> findByCategoryId(String type, Integer categoryId) {
         Map<String,Object> map = new HashMap<>();
-        map.put("categorylevelthree_id",categoryId);
+        map.put("categorylevel"+type+"_id",categoryId);
         return productMapper.selectByMap(map);
 
 

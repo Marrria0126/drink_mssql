@@ -14,7 +14,7 @@ import java.util.List;
  * @since 2021-03-06
  */
 public interface ProductService extends IService<Product> {
-    public List<Product> findByCategoryId(Integer categoryId);
+    public List<Product> findByCategoryId(String type, Integer categoryId);
 
    // List<Product> findByCategoryId(String type, Integer categoryId);
 

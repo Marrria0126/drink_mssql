@@ -187,9 +187,9 @@
                                 <div class="zj_l">
                                     <div class="zj_l_c" th:each="levelTwo:${levelOne.children}">
                                         <h2>
-                                            <a th:href="'/productList.html'+${levelTwo.id}" th:text="${levelTwo.name}"></a>
+                                            <a th:href="'/product/list/two/'+${levelTwo.id}" th:text="${levelTwo.name}"></a>
                                         </h2>
-                                        <a th:href="'/product/list/'+${levelThree.id}" th:each="levelThree:${levelTwo.children}" th:text="${levelThree.name}"></a>
+                                        <a th:href="'/product/list/three/'+${levelThree.id}" th:each="levelThree:${levelTwo.children}" th:text="${levelThree.name}"></a>
                                     </div>
                                 </div>
                             </div>
