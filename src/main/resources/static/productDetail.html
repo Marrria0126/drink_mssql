@@ -72,7 +72,7 @@
                 <input type="hidden" id="productId" value="1">
                 <input type="hidden" id="productPrice" value="1">
                 <span class="fl">
-                     <img src="/images/j_car.png" onclick="addCart()"/>
+                      <img src="/images/j_car.png" th:onclick="'addCart('+${product.id}+','+${product.price}+')'"/>
                 </span>
             </div>
         </div>
