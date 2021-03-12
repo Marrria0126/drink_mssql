@@ -37,7 +37,7 @@ function reduce() {
 }
 
 //添加购物车
-function addCart(productId,price){
+function addCart(productId,price) {
     let stockStr = $("#stock").text();
     let stock = parseInt(stockStr);
     if(stock == 0){
