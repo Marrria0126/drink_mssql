@@ -31,47 +31,47 @@ public class CartController {
 //    private UserAddressService userAddressService;
 
     @GetMapping("/add/{productId}/{price}/{quantity}")
-//    public ModelAndView add(
-//            @PathVariable("productId") Integer productId,
-//            @PathVariable("price") Float price,
-//            @PathVariable("quantity") Integer quantity,
-//            HttpSession session
-//    ) {
-//        Cart cart = new Cart();
-//        cart.setProductId(productId);
-//        cart.setQuantity(quantity);
-//        cart.setCost(price * quantity);
-//        User1 user = (User1) session.getAttribute("user");
-//        cart.setUserId(user.getId());
-//        ModelAndView modelAndView = new ModelAndView();
-//        if (cartService.save(cart)) {
-//            modelAndView.setViewName("settlement1");
-//        }
-//        return modelAndView;
-//    }
-//}
- public String add(
+    public ModelAndView add(
             @PathVariable("productId") Integer productId,
             @PathVariable("price") Float price,
             @PathVariable("quantity") Integer quantity,
             HttpSession session
-    ){
+    ) {
         Cart cart = new Cart();
         cart.setProductId(productId);
         cart.setQuantity(quantity);
         cart.setCost(price * quantity);
         User1 user = (User1) session.getAttribute("user");
         cart.setUserId(user.getId());
-        try {
-            if (cartService.save(cart)) {
-                return "redirect:/cart/findAllCart";
-            }
-        } catch (Exception e) {
-            return "redirect:/productCategory/list";
+        ModelAndView modelAndView = new ModelAndView();
+        if (cartService.save(cart)) {
+            modelAndView.setViewName("settlement1");
         }
-        return null;
+        return modelAndView;
     }
 }
+// public String add(
+//            @PathVariable("productId") Integer productId,
+//            @PathVariable("price") Float price,
+//            @PathVariable("quantity") Integer quantity,
+//            HttpSession session
+//    ){
+//        Cart cart = new Cart();
+//        cart.setProductId(productId);
+//        cart.setQuantity(quantity);
+//        cart.setCost(price * quantity);
+//        User1 user = (User1) session.getAttribute("user");
+//        cart.setUserId(user.getId());
+//        try {
+//            if (cartService.save(cart)) {
+//                return "redirect:/cart/findAllCart";
+//            }
+//        } catch (Exception e) {
+//            return "redirect:/productCategory/list";
+//        }
+//        return null;
+//    }
+//}
 
 //    @GetMapping("/findAllCart")
 //    public ModelAndView findAllCart(HttpSession session){
