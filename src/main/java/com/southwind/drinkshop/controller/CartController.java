@@ -30,8 +30,29 @@ public class CartController {
 //    @Autowired
 //    private UserAddressService userAddressService;
 
+//    @GetMapping("/add/{productId}/{price}/{quantity}")
+//    public ModelAndView add(
+//            @PathVariable("productId") Integer productId,
+//            @PathVariable("price") Float price,
+//            @PathVariable("quantity") Integer quantity,
+//            HttpSession session
+//    ) {
+//        Cart cart = new Cart();
+//        cart.setProductId(productId);
+//        cart.setQuantity(quantity);
+//        cart.setCost(price * quantity);
+//        User1 user = (User1) session.getAttribute("user");
+//        cart.setUserId(user.getId());
+//        ModelAndView modelAndView = new ModelAndView();
+//        if (cartService.save(cart)) {
+//            modelAndView.setViewName("settlement1");
+//        }
+//        return modelAndView;
+//    }
+//}
+
     @GetMapping("/add/{productId}/{price}/{quantity}")
-    public ModelAndView add(
+    public String add(
             @PathVariable("productId") Integer productId,
             @PathVariable("price") Float price,
             @PathVariable("quantity") Integer quantity,
@@ -43,44 +64,25 @@ public class CartController {
         cart.setCost(price * quantity);
         User1 user = (User1) session.getAttribute("user");
         cart.setUserId(user.getId());
-        ModelAndView modelAndView = new ModelAndView();
-        if (cartService.save(cart)) {
-            modelAndView.setViewName("settlement1");
+        try {
+            if (cartService.save(cart)) {
+                return "redirect:/cart/findAllCart";
+            }
+        } catch (Exception e) {
+            return "redirect:/productCategory/list";
         }
+        return null;
+    }
+
+    @GetMapping("/findAllCart")
+    public ModelAndView findAllCart(HttpSession session) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("settlement1");
+        User1 user = (User1) session.getAttribute("user");
+        modelAndView.addObject("cartList", cartService.findAllCartVOByUserId(user.getId()));
         return modelAndView;
     }
 }
-// public String add(
-//            @PathVariable("productId") Integer productId,
-//            @PathVariable("price") Float price,
-//            @PathVariable("quantity") Integer quantity,
-//            HttpSession session
-//    ){
-//        Cart cart = new Cart();
-//        cart.setProductId(productId);
-//        cart.setQuantity(quantity);
-//        cart.setCost(price * quantity);
-//        User1 user = (User1) session.getAttribute("user");
-//        cart.setUserId(user.getId());
-//        try {
-//            if (cartService.save(cart)) {
-//                return "redirect:/cart/findAllCart";
-//            }
-//        } catch (Exception e) {
-//            return "redirect:/productCategory/list";
-//        }
-//        return null;
-//    }
-//}
-
-//    @GetMapping("/findAllCart")
-//    public ModelAndView findAllCart(HttpSession session){
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("settlement1");
-//        User user = (User)session.getAttribute("user");
-//        modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
-//        return modelAndView;
-//    }
 //
 //    @GetMapping("/deleteById/{id}")
 //    public String deleteById(@PathVariable("id") Integer id){
