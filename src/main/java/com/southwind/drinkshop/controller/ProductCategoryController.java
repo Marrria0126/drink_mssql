@@ -1,6 +1,8 @@
 package com.southwind.drinkshop.controller;
 
 
+import com.southwind.drinkshop.entity.User1;
+import com.southwind.drinkshop.service.CartService;
 import com.southwind.drinkshop.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,13 +27,20 @@ import java.util.ArrayList;
 public class ProductCategoryController {
     @Autowired
     private ProductCategoryService productCategoryService;
-
+    @Autowired
+    private CartService cartService;
 
     @GetMapping("/list")
-    public ModelAndView list() {
+    public ModelAndView list(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("main");
         modelAndView.addObject("list", productCategoryService.getAllProductCategoryVO());
+        User1 user = (User1) session.getAttribute("user");
+        if(user == null){
+            modelAndView.addObject("cartList",new ArrayList<>());
+        }else{
+            modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
+        }
         return modelAndView;
     }
 }
