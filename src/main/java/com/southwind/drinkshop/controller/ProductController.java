@@ -2,6 +2,8 @@ package com.southwind.drinkshop.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.southwind.drinkshop.entity.User1;
+import com.southwind.drinkshop.service.CartService;
 import com.southwind.drinkshop.service.ProductCategoryService;
 import com.southwind.drinkshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,25 +33,25 @@ public class ProductController {
     private ProductService productService;
     @Autowired
     private ProductCategoryService productCategoryService;
-//    @Autowired
-//    private CartService cartService;
+    @Autowired
+    private CartService cartService;
 
     @GetMapping("/list/{type}/{id}")
     public ModelAndView list(
               @PathVariable("type") String type,
-              @PathVariable("id") Integer id
-//            HttpSession session
+              @PathVariable("id") Integer id,
+              HttpSession session
     ) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("productList");
         modelAndView.addObject("productList", productService.findByCategoryId(type, id));
         modelAndView.addObject("list", productCategoryService.getAllProductCategoryVO());
-//        User user = (User)session.getAttribute("user");
-//        if(user == null){
-//            modelAndView.addObject("cartList",new ArrayList<>());
-//        }else{
-//            modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
-//        }
+        User1 user = (User1)session.getAttribute("user");
+        if(user == null){
+            modelAndView.addObject("cartList",new ArrayList<>());
+        }else{
+            modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
+        }
         return modelAndView;
 //    }
 //
@@ -72,17 +74,17 @@ public class ProductController {
     }
 //
         @GetMapping("/findById/{id}")
-        public ModelAndView findById(@PathVariable("id") Integer id){
+        public ModelAndView findById(@PathVariable("id") Integer id,HttpSession session){
             ModelAndView modelAndView = new ModelAndView();
             modelAndView.setViewName("productDetail");
             modelAndView.addObject("product", productService.getById(id));
             modelAndView.addObject("list",productCategoryService.getAllProductCategoryVO());
-//        User user = (User)session.getAttribute("user");
-//        if(user == null){
-//            modelAndView.addObject("cartList",new ArrayList<>());
-//        }else{
-//            modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
-//        }
+            User1 user = (User1)session.getAttribute("user");
+         if(user == null){
+            modelAndView.addObject("cartList",new ArrayList<>());
+        }else{
+            modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
+        }
             return modelAndView;
 //    }
 //
