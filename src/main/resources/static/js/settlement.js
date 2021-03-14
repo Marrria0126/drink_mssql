@@ -74,6 +74,7 @@ function addQuantity(obj) {
         let val = parseInt($(".qprice").eq(i).html().substring(1));
         totalCost += val;
     }
+    $("#totalprice").html("￥"+totalCost);
 }
 
 //商品数量--
@@ -134,6 +135,7 @@ function subQuantity(obj) {
         let val = parseInt($(".qprice").eq(i).html().substring(1));
         totalCost += val;
     }
+    $("#totalprice").html("￥"+totalCost);
 }
 //移出购物车
 // function removeCart(obj){
