@@ -89,35 +89,37 @@ public class CartController {
         cartService.removeById(id);
         return "redirect:/cart/findAllCart";
     }
-}
-//
-//    @GetMapping("/settlement2")
-//    public ModelAndView settlement2(HttpSession session){
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("settlement2");
-//        User user = (User)session.getAttribute("user");
-//        modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
+
+
+    @GetMapping("/settlement2")
+    public ModelAndView settlement2(HttpSession session){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("settlement2");
+        User1 user = (User1)session.getAttribute("user");
+        modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
 //        QueryWrapper wrapper = new QueryWrapper();
 //        wrapper.eq("user_id",user.getId());
 //        modelAndView.addObject("addressList",userAddressService.list(wrapper));
-//        return modelAndView;
-//    }
+        return modelAndView;
+    }
+
+
 //
-//    @PostMapping("/update/{id}/{quantity}/{cost}")
-//    @ResponseBody
-//    public String updateCart(
-//            @PathVariable("id") Integer id,
-//            @PathVariable("quantity") Integer quantity,
-//            @PathVariable("cost") Float cost
-//    ){
-//        Cart cart = cartService.getById(id);
-//        cart.setQuantity(quantity);
-//        cart.setCost(cost);
-//        if(cartService.updateById(cart)){
-//            return "success";
-//        }else{
-//            return "fail";
-//        }
-//    }
-//}
+    @PostMapping("/update/{id}/{quantity}/{cost}")
+    @ResponseBody
+    public String updateCart(
+            @PathVariable("id") Integer id,
+            @PathVariable("quantity") Integer quantity,
+            @PathVariable("cost") Float cost
+    ){
+        Cart cart = cartService.getById(id);
+        cart.setQuantity(quantity);
+        cart.setCost(cost);
+        if(cartService.updateById(cart)){
+            return "success";
+        }else{
+            return "fail";
+        }
+    }
+}
 

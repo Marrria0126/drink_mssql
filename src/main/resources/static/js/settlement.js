@@ -65,17 +65,31 @@ function addQuantity(obj) {
     quantity++;
     let price = parseFloat($(".productPrice").eq(index).val());
     let cost = quantity * price;
-    $(".qprice").eq(index).text("￥" + cost);
-    $(".car_ipt").eq(index).val(quantity);
+    let id = parseInt($(".id").eq(index).val());
+    //将最新的quantity cost发给后台，动态更新数据库
+    //基于jQeury的Ajax
+    //基于js的Ajax
+    //基于Vue的axios
+    $.ajax({
+        url:"/cart/update/"+id+"/"+quantity+"/"+cost,
+        type:"POST",
+        success:function (data) {
+            if(data == "success"){
+                $(".qprice").eq(index).text('￥'+cost);
+                $(".car_ipt").eq(index).val(quantity);
 
-    let array = $(".qprice");
-    let totalCost = 0;
-    for (let i = 0; i < array.length; i++) {
-        let val = parseInt($(".qprice").eq(i).html().substring(1));
-        totalCost += val;
-    }
-    $("#totalprice").html("￥"+totalCost);
+                let array = $(".qprice");
+                let totalCost = 0;
+                for(let i = 0;i < array.length;i++){
+                    let val = parseInt($(".qprice").eq(i).html().substring(1));
+                    totalCost += val;
+                }
+                $("#totalprice").html("￥"+totalCost);
+            }
+        }
+    });
 }
+
 
 //商品数量--
 // function subQuantity(obj){
@@ -126,16 +140,26 @@ function subQuantity(obj) {
     quantity--;
     let price = parseFloat($(".productPrice").eq(index).val());
     let cost = quantity * price;
-    $(".qprice").eq(index).text("￥" + cost);
-    $(".car_ipt").eq(index).val(quantity);
+    let id = parseInt($(".id").eq(index).val());
 
-    let array = $(".qprice");
-    let totalCost = 0;
-    for (let i = 0; i < array.length; i++) {
-        let val = parseInt($(".qprice").eq(i).html().substring(1));
-        totalCost += val;
-    }
-    $("#totalprice").html("￥"+totalCost);
+    $.ajax({
+        url:"/cart/update/"+id+"/"+quantity+"/"+cost,
+        type:"POST",
+        success:function (data) {
+            if(data == "success"){
+                $(".qprice").eq(index).text('￥'+cost);
+                $(".car_ipt").eq(index).val(quantity);
+
+                let array = $(".qprice");
+                let totalCost = 0;
+                for(let i = 0;i < array.length;i++){
+                    let val = parseInt($(".qprice").eq(i).html().substring(1));
+                    totalCost += val;
+                }
+                $("#totalprice").html("￥"+totalCost);
+            }
+        }
+    });
 }
 //移出购物车
 // function removeCart(obj){
