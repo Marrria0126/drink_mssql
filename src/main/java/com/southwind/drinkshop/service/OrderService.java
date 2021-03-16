@@ -15,5 +15,5 @@ import java.util.List;
  * @since 2021-03-06
  */
 public interface OrderService extends IService<Orders> {
-    public boolean save(Orders orders, User1 user);
+    public boolean save(Orders orders, User1 user, String address,String remark);
     }

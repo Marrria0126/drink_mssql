@@ -30,9 +30,9 @@ public class OrderController {
 
 
     @PostMapping("/settlement3")
-    public ModelAndView settlement3(Orders orders, HttpSession session) {
+    public ModelAndView settlement3(Orders orders, HttpSession session,String address,String remark) {
         User1 user = (User1) session.getAttribute("user");
-        orderService.save(orders,user);
+        orderService.save(orders,user,address,remark);
         return null;
     }
 
