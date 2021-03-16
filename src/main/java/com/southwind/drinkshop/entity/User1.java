@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.southwind.drinkshop.enums.GenderEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.annotation.Id;
@@ -33,7 +34,7 @@ import org.springframework.data.annotation.Id;
 
     private String password;
 
-    private Integer gender;
+    private GenderEnum gender;
 
     private String identityCode;
 

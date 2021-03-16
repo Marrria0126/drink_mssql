@@ -177,3 +177,12 @@ function subQuantity(obj) {
             window.location.href = "/cart/deleteById/" + id;
         }
     }
+
+function settlement2() {
+    var totalCost = $("#totalprice").text();
+    if(totalCost == "￥0"){
+        alert("购物车为空，不能结算！");
+        return false;
+    }
+    window.location.href="/cart/settlement2";
+}

@@ -3,6 +3,7 @@ package com.southwind.drinkshop.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.southwind.drinkshop.entity.User1;
+import com.southwind.drinkshop.service.CartService;
 import com.southwind.drinkshop.service.User1Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
@@ -28,6 +30,9 @@ public class User1Controller {
 
     @Autowired
     private User1Service user1Service;
+
+    @Autowired
+    private CartService cartService;
 
     @PostMapping("/register")
     public String register(User1 user, Model model){
@@ -78,6 +83,15 @@ public class User1Controller {
     public String logout(HttpSession session){
         session.invalidate();
         return "login";
+    }
+
+    @GetMapping("/userInfo")
+    public ModelAndView userInfo(HttpSession session){
+        User1 user = (User1) session.getAttribute("user");
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("userInfo");
+        modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
+        return modelAndView;
     }
 }
 

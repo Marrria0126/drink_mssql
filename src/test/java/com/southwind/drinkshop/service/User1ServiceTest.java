@@ -18,7 +18,7 @@ class User1ServiceTest {
         user1.setLoginName("yihong");
         user1.setUserName("xiayihong");
         user1.setPassword("qwert");
-        user1.setGender(2);
+//        user1.setGender(2);
         System.out.println(service.save(user1));
     }
 
