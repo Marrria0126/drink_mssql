@@ -1,6 +1,6 @@
 package com.southwind.drinkshop.service;
 
-import com.southwind.drinkshop.entity.Order;
+import com.southwind.drinkshop.entity.Orders;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author Yihong
  * @since 2021-03-06
  */
-public interface OrderService extends IService<Order> {
+public interface OrderService extends IService<Orders> {
 
 }
