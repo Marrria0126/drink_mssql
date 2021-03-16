@@ -1,16 +1,15 @@
 package com.southwind.drinkshop.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.southwind.drinkshop.entity.Orders;
-import com.southwind.drinkshop.entity.User1;
-import com.southwind.drinkshop.entity.UserAddress;
-import com.southwind.drinkshop.mapper.OrderMapper;
-import com.southwind.drinkshop.mapper.UserAddressMapper;
+import com.southwind.drinkshop.entity.*;
+import com.southwind.drinkshop.mapper.*;
 import com.southwind.drinkshop.service.OrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -26,6 +25,18 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
 
     @Autowired
     private UserAddressMapper userAddressMapper;
+
+    @Autowired
+    private CartMapper cartMapper;
+
+    @Autowired
+    private OrderMapper orderMapper;
+
+    @Autowired
+    private OrderDetailMapper orderDetailMapper;
+
+    @Autowired
+    private ProductMapper productMapper;
 
     @Override
     public boolean save(Orders orders, User1 user,String address,String remark) {
@@ -47,7 +58,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
             userAddressMapper.insert(userAddress);
             orders.setUserAddress(address);
         }
-
+        //存储orders
         orders.setUserId(user.getId());
         orders.setLoginName(user.getLoginName());
         String seriaNumber = null;
@@ -61,6 +72,21 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
             e.printStackTrace();
         }
         orders.setSerialnumber(seriaNumber);
-        return save(orders);
+        orderMapper.insert(orders);
+
+        //存储ordersdetail
+        QueryWrapper wrapper = new QueryWrapper();
+        wrapper.eq("user_id",user.getId());
+        List<Cart> cartList = cartMapper.selectList(wrapper);
+        for (Cart cart : cartList) {
+            OrderDetail orderDetail = new OrderDetail();
+            BeanUtils.copyProperties(cart,orderDetail);
+            orderDetail.setId(null);
+            orderDetail.setOrderId(orders.getId());
+            orderDetailMapper.insert(orderDetail);
+        }
+
+
+        return true;
     }
 }
