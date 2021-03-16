@@ -3,6 +3,7 @@ package com.southwind.drinkshop.controller;
 
 import com.southwind.drinkshop.entity.Orders;
 import com.southwind.drinkshop.entity.User1;
+import com.southwind.drinkshop.service.CartService;
 import com.southwind.drinkshop.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,12 +29,18 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private CartService cartService;
 
     @PostMapping("/settlement3")
     public ModelAndView settlement3(Orders orders, HttpSession session,String address,String remark) {
         User1 user = (User1) session.getAttribute("user");
         orderService.save(orders,user,address,remark);
-        return null;
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("settlement3");
+        modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
+        modelAndView.addObject("orders",orders);
+        return modelAndView;
     }
 
 }
