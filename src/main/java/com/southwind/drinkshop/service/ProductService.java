@@ -2,6 +2,8 @@ package com.southwind.drinkshop.service;
 
 import com.southwind.drinkshop.entity.Product;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.southwind.drinkshop.vo.TableDataVO;
+import com.southwind.drinkshop.vo.TableProductVO;
 
 import java.util.List;
 
@@ -16,12 +18,12 @@ import java.util.List;
 public interface ProductService extends IService<Product> {
     public List<Product> findByCategoryId(String type, Integer categoryId);
 
-   // List<Product> findByCategoryId(String type, Integer categoryId);
+//    List<Product> findByCategoryId(String type, Integer categoryId);
 
     /**
      * 后台管理系统返回商品数据
      */
-   // public TableDataVO<TableProductVO> findAllTableData(Integer page,Integer limit);
+    public TableDataVO<TableProductVO> findAllTableData(Integer page, Integer limit);
 
 
 }

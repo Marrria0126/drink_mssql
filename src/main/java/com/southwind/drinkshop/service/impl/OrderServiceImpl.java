@@ -5,12 +5,16 @@ import com.southwind.drinkshop.entity.*;
 import com.southwind.drinkshop.mapper.*;
 import com.southwind.drinkshop.service.OrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.southwind.drinkshop.vo.OrderDetailVO;
+import com.southwind.drinkshop.vo.OrderVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -93,4 +97,43 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
         return true;
     }
 
+    @Override
+    public List<OrderVO> findAllOrederVOByUserId(Integer id) {
+        QueryWrapper wrapper = new QueryWrapper();
+        wrapper.eq("user_id",id);
+        List<Orders> ordersList = orderMapper.selectList(wrapper);
+        //VO转换
+//        List<OrderVO> orderVOList = new ArrayList<>();
+//        for (Orders orders : ordersList) {
+//            OrderVO orderVO = new OrderVO();
+//            BeanUtils.copyProperties(orders,orderVO);
+//            orderVOList.add(orderVO);
+//        }
+
+        List<OrderVO> orderVOList = ordersList.stream()
+                .map(e -> new OrderVO(
+                        e.getId(),
+                        e.getLoginName(),
+                        e.getSerialnumber(),
+                        e.getUserAddress(),
+                        e.getCost()
+                )).collect(Collectors.toList());
+        //封装OrderDetail
+        for (OrderVO orderVO : orderVOList) {
+            QueryWrapper wrapper1 = new QueryWrapper();
+            wrapper1.eq("order_id",orderVO.getId());
+            List<OrderDetail> orderDetailList = orderDetailMapper.selectList(wrapper1);
+            List<OrderDetailVO> orderDetailVOList = new ArrayList<>();
+            for (OrderDetail orderDetail : orderDetailList) {
+                OrderDetailVO orderDetailVO = new OrderDetailVO();
+                Product product = productMapper.selectById(orderDetail.getProductId());
+                BeanUtils.copyProperties(product,orderDetailVO);
+                BeanUtils.copyProperties(orderDetail,orderDetailVO);
+                orderDetailVOList.add(orderDetailVO);
+            }
+            orderVO.setOrderDetailVOList(orderDetailVOList);
+        }
+        return orderVOList;
+    }
 }
+

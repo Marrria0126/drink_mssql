@@ -6,6 +6,7 @@ import com.southwind.drinkshop.entity.User1;
 import com.southwind.drinkshop.service.CartService;
 import com.southwind.drinkshop.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -42,6 +43,14 @@ public class OrderController {
         modelAndView.addObject("orders",orders);
         return modelAndView;
     }
-
+    @GetMapping("/list")
+    public ModelAndView list(HttpSession session){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("orderList");
+        User1 user = (User1) session.getAttribute("user");
+        modelAndView.addObject("list",orderService.findAllOrederVOByUserId(user.getId()));
+        modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
+        return modelAndView;
+    }
 }
 
