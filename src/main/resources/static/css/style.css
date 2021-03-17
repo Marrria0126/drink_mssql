@@ -295,7 +295,8 @@ table.c_tab tr th {
     font-family: "Microsoft YaHei";
     float: left;
     padding: 0 10px;
-    border: 2px solid #FC002A;
+    border: 2px solid #22a3e0;
+    /*#fc002a*/
     border-right: 0;
     outline:0px;
 }
@@ -304,7 +305,7 @@ table.c_tab tr th {
     width: 90px;
     height: 42px;
     line-height: 40px \9;
-    background-color: #FC002A;
+    background-color: #22a3e0;
     color: #FFF;
     font-size: 16px;
     font-family: "Microsoft YaHei";
@@ -320,7 +321,7 @@ table.c_tab tr th {
 }
 
 .i_car {
-    width: 141px;
+    width: 150px;
     height: 38px;
     line-height: 38px;
     background: url(../images/car.png) no-repeat 10px center;
@@ -437,7 +438,7 @@ ul.cars li .price {
 }
 
 .price_a {
-    width: 120px;
+    width: 180px;
     height: 35px;
     line-height: 35px;
     overflow: hidden;
