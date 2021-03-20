@@ -165,12 +165,12 @@ table.c_tab tr th {
 }
 
 .c_h span:hover {
-    color: #ff4e00;
+    color: #22a3e0;
 }
 
 .c_h span.c_check {
     color: #FFF;
-    background-color: #ff4e00;
+    background-color: #22a3e0;
 }
 
 /*.s_log{
@@ -333,7 +333,7 @@ table.c_tab tr th {
 }
 
 .car_t {
-    width: 95px;
+    width: 125px;
     height: 38px;
     overflow: hidden;
     background: url(../images/d_arrow.png) no-repeat right center;
@@ -462,7 +462,7 @@ ul.cars li .price {
     width: 100%;
     min-width: 1200px;
     height: 43px;
-    border-bottom: 2px solid #ff4e00;
+    border-bottom: 2px solid #22a3e0;
 }
 
 .menu {
@@ -504,7 +504,7 @@ ul.menu_r li a {
 }
 
 ul.menu_r li a:hover, ul.menu_r li a.now {
-    color: #ff4e00;
+    color: #22a3e0;
 }
 
 .m_ad {
@@ -512,7 +512,8 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     height: 43px;
     line-height: 40px;
     overflow: hidden;
-    color: #ff3600;
+    color: #22a3e0;
+    /*#ff3600*/
     font-size: 20px;
     font-weight: bold;
     text-align: right;
@@ -522,7 +523,8 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 .nav {
     width: 211px;
     height: 45px;
-    background-color: #FC002A;
+    background-color: #2C5B82;
+    /*#0767948*/
     position: absolute;
     left: 0px;
     top: 0;
@@ -540,8 +542,9 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 
 .leftNav {
     width: 211px;
-    height: 412px;
-    background-color: #565656;
+    height: 420px;
+    background-color: #5b9bcf;
+    /*#565656  #22a3e0 #2096d0*/
     position: absolute;
     left: 0;
     top: 44px;
@@ -553,7 +556,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 
 .leftNav ul li {
     height: 40px;
-    line-height: 40px;
+    line-height: 60px;
     background: url(../images/n_arrow.gif) no-repeat 195px center;
     color: #FFF;
     font-size: 14px;
@@ -619,7 +622,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 }
 
 .leftNav ul li ul li a:hover {
-    color: #e02d02;
+    color: #22a3e0;
 }
 
 .leftNav ul li ul li .n_t {
@@ -666,7 +669,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     height: 40px;
     line-height: 40px;
     background-color: #FFF;
-    color: #ff4e00;
+    color: #22a3e0;
     z-index: 800px;
 }
 
@@ -996,7 +999,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 }
 
 .inews a:hover {
-    color: #ff4e00;
+    color: #22a3e0;
 }
 
 .inews ul {
