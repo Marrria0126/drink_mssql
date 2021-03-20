@@ -35,6 +35,8 @@ import org.springframework.data.annotation.Id;
     private String password;
 
     private GenderEnum gender;
+  @TableField(exist = false)
+  private Integer genderCode;
 
     private String identityCode;
 

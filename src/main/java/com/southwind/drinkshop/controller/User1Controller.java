@@ -3,6 +3,7 @@ package com.southwind.drinkshop.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.southwind.drinkshop.entity.User1;
+import com.southwind.drinkshop.enums.GenderEnum;
 import com.southwind.drinkshop.service.CartService;
 import com.southwind.drinkshop.service.User1Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,12 +39,12 @@ public class User1Controller {
     public String register(User1 user, Model model){
         boolean result = false;
         try {
-//            if(user.getGenderCode() == 1){
-//                user.setGender(GenderEnum.MAN);
-//            }
-//            if(user.getGenderCode() == 0){
-//                user.setGender(GenderEnum.WOMAN);
-//            }
+            if(user.getGenderCode() == 1){
+                user.setGender(GenderEnum.MAN);
+            }
+            if(user.getGenderCode() == 0){
+                user.setGender(GenderEnum.WOMAN);
+            }
             result = user1Service.save(user);
         } catch (Exception e) {
             model.addAttribute("error",user.getLoginName()+"已存在！请重新输入！");
