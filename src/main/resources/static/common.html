@@ -87,7 +87,7 @@
             </span>
         </span>
             <span class="fr">
-             <span class="fl" th:if="${session.user == null}">Hallo!&nbsp;<a href="/login.html" style="color:#ff4e00;">Anmelden</a>&nbsp;&nbsp;&nbsp;&nbsp;Bist du neu?&nbsp;<a href="/register" style="color:#ff4e00;">Registrieren</a>&nbsp;&nbsp;</span>
+             <span class="fl" th:if="${session.user == null}">Hallo!&nbsp;<a href="/login.html" style="color:#22a3e0;">Anmelden</a>&nbsp;&nbsp;&nbsp;&nbsp;Bist du neu?&nbsp;<a href="/register" style="color:#22a3e0;">Registrieren</a>&nbsp;&nbsp;</span>
             <span class="fl" th:if="${session.user != null}"><a href="/user/userInfo" >Herzlich Willkommen,&nbsp;<span th:text="${session.user.userName}"></span></a>&nbsp;|&nbsp;<a href="/orders/list">Meine Bestellung</a>&nbsp;</span>
             <span class="fl" th:if="${session.user != null}">|&nbsp;<a href="/user/logout">Abmelden</a></span>
         </span>
@@ -134,7 +134,7 @@
             </a>
 
             <div class="car_bg">
-                <div class="un_login">我的购物车</div>
+                <div class="un_login">Meine Einkaufsliste</div>
                 <ul class="cars">
                     <li th:each="cart:${cartList}">
                         <div class="img"><a th:href="'/product/findById/'+${cart.productId}"><img th:src="'/images/'+${cart.fileName}" width="58" height="58" /></a></div>
@@ -142,7 +142,7 @@
                         <div class="price"><font color="#ff4e00" th:text="'￥'+${cart.price}"></font> X <span class="quantity" th:text="${cart.quantity}"></span>  =  <span class="cost" th:text="${cart.cost}"></span></div>
                     </li>
                 </ul>
-                <div class="price_sum">Zwischensumme&nbsp;<font color="#ff4e00"></font>￥<span id="totalCost"></span></div>
+                <div class="price_sum">Zwischensumme&nbsp;<font color="#22a3e0"></font><span id="totalCost"></span></div>
                 <div class="price_a"><a href="/cart/findAllCart">Warenkorb&nbsp;ansehen</a></div>
             </div>
 
@@ -168,7 +168,7 @@
     <div class="menu_bg">
         <div class="menu">
             <div class="nav">
-                <div class="nav_t">全部商品分类</div>
+                <div class="nav_t">Produktkatalog</div>
                 <div class="leftNav">
                     <ul>
                         <li th:each="levelOne:${list}">
@@ -190,7 +190,7 @@
                 </div>
             </div>
             <ul class="menu_r">
-                <li><a href="/productCategory/list">首页</a></li>
+                <li><a href="/productCategory/list">Hauptseite</a></li>
                 <li th:each="productCategory:${list}">
                     <a th:href="'/product/list/one/'+${productCategory.id}" th:text="${productCategory.name}"></a>
                 </li>

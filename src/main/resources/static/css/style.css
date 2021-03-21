@@ -321,7 +321,7 @@ table.c_tab tr th {
 }
 
 .i_car {
-    width: 150px;
+    width: 170px;
     height: 38px;
     line-height: 38px;
     background: url(../images/car.png) no-repeat 10px center;
@@ -343,7 +343,7 @@ table.c_tab tr th {
 }
 
 .car_t span {
-    color: #ff4e00;
+    color: #22a3e0;
 }
 
 .i_car:hover .car_bg {
@@ -406,7 +406,7 @@ ul.cars li .name a {
 }
 
 ul.cars li .name a:hover {
-    color: #ff4e00;
+    color: #22a3e0;
 }
 
 ul.cars li .price {
@@ -432,7 +432,7 @@ ul.cars li .price {
 }
 
 .price_sum span {
-    color: #ff4e00;
+    color: #22a3e0;
     font-size: 20px;
     font-weight: bold;
 }
@@ -485,7 +485,7 @@ ul.menu_r {
 }
 
 ul.menu_r li {
-    width: 70px;
+    width: 85px;
     height: 40px;
     line-height: 40px;
     overflow: hidden;
@@ -496,7 +496,7 @@ ul.menu_r li {
 }
 
 ul.menu_r li a {
-    width: 70px;
+    width: 85px;
     height: 40px;
     overflow: hidden;
     float: left;
@@ -1416,10 +1416,10 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     height: 39px;
     line-height: 39px;
     overflow: hidden;
-    color: #ff4e00;
+    color: #2C5B82;
     font-size: 18px;
     padding: 0 5px;
-    border-bottom: 2px solid #ff4e00;
+    border-bottom: 2px solid #2C5B82;
 }
 
 .i_mores {
@@ -1432,7 +1432,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 }
 
 .i_mores a:hover {
-    color: #ff4e00;
+    color: #2C5B82;
 }
 
 .i_sell {
@@ -1560,7 +1560,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     height: 30px;
     line-height: 30px;
     overflow: hidden;
-    color: #ff4e00;
+    color: #22a3e0;
     font-size: 14px;
     text-indent: 10px;
     position: absolute;
@@ -2517,6 +2517,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     width: 1200px;
     overflow: hidden;
     margin-top: 45px;
+    /*background-color: #b2e7ef;*/
 }
 
 .log_img {
@@ -2524,11 +2525,11 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     height: 425px;
     overflow: hidden;
     float: left;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .log_c {
-    width: 455px;
+    width: 500px;
     height: 330px;
     overflow: hidden;
     background-color: #FFF;
@@ -2666,7 +2667,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 }
 
 .reg_c {
-    width: 475px;
+    width: 500px;
     height: 530px;
     overflow: hidden;
     background-color: #FFF;
