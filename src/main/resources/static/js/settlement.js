@@ -3,10 +3,10 @@ $(function(){
     var array = $(".qprice");
     var totalCost = 0;
     for(var i = 0;i < array.length;i++){
-        var val = parseInt($(".qprice").eq(i).html().substring(1));
+        var val = parseFloat($(".qprice").eq(i).html().substring(1));
         totalCost += val;
     }
-    $("#totalprice").html("￥"+totalCost);
+    $("#totalprice").html(totalCost+"€");
     //settlement2使用
     $("#settlement2_totalCost").val(totalCost);
 });
@@ -180,7 +180,7 @@ function subQuantity(obj) {
 
 function settlement2() {
     var totalCost = $("#totalprice").text();
-    if(totalCost == "￥0"){
+    if(totalCost == "0€"){
         alert("购物车为空，不能结算！");
         return false;
     }

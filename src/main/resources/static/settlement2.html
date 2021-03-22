@@ -20,20 +20,21 @@
         <div class="content mar_20">
             <div class="two_bg">
                 <div class="two_t">
-                    <span class="fr"><a href="/cart/findAllCart">修改</a></span>商品列表
+                    <span class="fr"><a href="/cart/findAllCart">Ändern</a></span>Produktlist
                 </div>
                 <table border="0" class="car_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
                     <tr>
                         <td class="car_th" width="550">Produktname</td>
                         <td class="car_th" width="150">Menge</td>
-                        <td class="car_th" width="130">Total</td>
+                        <td class="car_th" width="130">Totalpreis</td>
                     </tr>
 
                     <tr th:each="cart:${cartList}">
                         <td align="center">
                             <div class="c_s_img">
-                                <img th:src="'/images/'+${cart.fileName}" width="73" height="73"/>
+                                <img th:src="'/images/'+${cart.fileName}" width="92" height="73"/>
                             </div>
+                            <br/>
                             <div th:text="${cart.name}"></div>
                         </td>
                         <td align="center" th:text="${cart.quantity}"></td>
@@ -49,13 +50,13 @@
                     <tr>
                         <td class="p_td" width="160">Wirkliche&nbsp;Name</td>
                         <td width="395" th:text="${session.user.userName}"></td>
-                        <td class="p_td">Benutzername</td>
-                        <td th:text="${session.user.loginName}"></td>
+                        <td class="p_td" width="160">Benutzername</td>
+                        <td width="395" th:text="${session.user.loginName}"></td>
                     </tr>
                     <tr>
-                        <td class="p_td">Telefonnummer</td>
-                        <td th:text="${session.user.mobile}"></td>
-                        <td class="p_td" width="160">E-Mail</td>
+                        <td class="p_td" width="160">Telefonnummer</td>
+                        <td width="395" th:text="${session.user.mobile}"></td>
+                        <td class="p_td" width="160">E-Mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         <td width="395" th:text="${session.user.email}"></td>
                     </tr>
                 </table>

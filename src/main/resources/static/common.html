@@ -139,7 +139,7 @@
                     <li th:each="cart:${cartList}">
                         <div class="img"><a th:href="'/product/findById/'+${cart.productId}"><img th:src="'/images/'+${cart.fileName}" width="58" height="58" /></a></div>
                         <div class="name"><a th:href="'/product/findById/'+${cart.productId}" th:text="${cart.name}"></a></div>
-                        <div class="price"><font color="#ff4e00" th:text="'￥'+${cart.price}"></font> X <span class="quantity" th:text="${cart.quantity}"></span>  =  <span class="cost" th:text="${cart.cost}"></span></div>
+                        <div class="price"><font color="#ff4e00" th:text="${cart.price}+'€'"></font> X <span class="quantity" th:text="${cart.quantity}"></span>  =  <span class="cost" th:text="${cart.cost}+'€'"></span></div>
                     </li>
                 </ul>
                 <div class="price_sum">Zwischensumme&nbsp;<font color="#22a3e0"></font><span id="totalCost"></span></div>
@@ -155,10 +155,10 @@
             var array = $(".cost");
             var totalCost = 0;
             for(var i = 0;i < array.length;i++){
-                var val = parseInt($(".cost").eq(i).html());
+                var val = parseFloat($(".cost").eq(i).html());
                 totalCost += val;
             }
-            $("#totalCost").html("￥"+totalCost);
+            $("#totalCost").html(totalCost+"€");
         });
     </script>
 </div>

@@ -752,6 +752,19 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     /*background-color: #90002D;*/
 }
 
+.content1 {
+    width: 1200px;
+    height: 300px;
+    overflow: hidden;
+}
+
+
+.content1 {
+    width: 1200px;
+    height: 430px;
+    overflow: hidden;
+}
+
 .content {
     width: 1200px;
     overflow: hidden;
@@ -3484,7 +3497,7 @@ ul.cate_list li .carbg {
 }
 
 ul.cate_list li .carbg a.ss {
-    width: 68px;
+    width: 100px;
     height: 28px;
     line-height: 28px;
     overflow: hidden;
@@ -3508,12 +3521,12 @@ ul.cate_list li:hover .carbg a.ss {
 }
 
 ul.cate_list li .carbg a.j_car {
-    width: 138px;
+    width: 106px;
     height: 28px;
     line-height: 28px;
     overflow: hidden;
-    background: url(../images/cars.png) no-repeat 24px center;
-    color: #ff4e00;
+    background: url(../images/car.png) no-repeat 12px center;
+    color: #22a3e0;
     text-indent: 47px;
     float: left;
     display: inline;
@@ -3523,16 +3536,16 @@ ul.cate_list li .carbg a.j_car {
 
 ul.cate_list li .carbg a.j_car:hover {
     color: #FFF;
-    background: url(../images/cars_h.png) no-repeat 24px center;
-    background-color: #ff4e00;
-    border: 1px solid #ff4e00;
+    background: url(../images/cars_h.png) no-repeat 17px center;
+    background-color: #22a3e0;
+    border: 1px solid #22a3e0;
 }
 
 ul.cate_list li:hover .carbg a.j_car {
     color: #FFF;
-    background: url(../images/cars_h.png) no-repeat 24px center;
-    background-color: #ff4e00;
-    border: 1px solid #ff4e00;
+    background: url(../images/cars_h.png) no-repeat 17px center;
+    background-color: #22a3e0;
+    border: 1px solid #22a3e0;
 }
 
 .pages {
@@ -3651,7 +3664,7 @@ ul.brand li .name span {
     overflow: hidden;
     float: left;
     display: inline;
-    margin-left: 30px;
+    margin-left: 100px;
 }
 
 .des_name {
@@ -3671,7 +3684,7 @@ ul.brand li .name span {
 }
 
 .des_price {
-    height: 64px;
+    height: 30px;
     line-height: 32px;
     overflow: hidden;
     font-family: "宋体";
@@ -5599,7 +5612,7 @@ table.car_tab tr td.car_th {
 }
 
 .c_s_img {
-    width: 73px;
+    width: 92px;
     height: 73px;
     overflow: hidden;
     float: left;
