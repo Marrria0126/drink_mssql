@@ -47,7 +47,7 @@ public class User1Controller {
             }
             result = user1Service.save(user);
         } catch (Exception e) {
-            model.addAttribute("error",user.getLoginName()+"已存在！请重新输入！");
+            model.addAttribute("error",user.getLoginName()+"Existierte! Bitte nochmal eingeben!");
             return "register";
         }
         if(result) return "login";

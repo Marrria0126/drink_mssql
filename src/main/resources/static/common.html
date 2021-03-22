@@ -134,7 +134,7 @@
             </a>
 
             <div class="car_bg">
-                <div class="un_login">Meine Einkaufsliste</div>
+                <div class="un_login">Mein Warenkorb</div>
                 <ul class="cars">
                     <li th:each="cart:${cartList}">
                         <div class="img"><a th:href="'/product/findById/'+${cart.productId}"><img th:src="'/images/'+${cart.fileName}" width="58" height="58" /></a></div>

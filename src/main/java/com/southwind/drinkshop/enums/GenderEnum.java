@@ -5,8 +5,8 @@ import lombok.Getter;
 
 @Getter
 public enum GenderEnum {
-    WOMAN(0,"女"),
-    MAN(1,"男");
+    WOMAN(0,"weiblich"),
+    MAN(1,"männlich");
 
     @EnumValue
     private Integer code;

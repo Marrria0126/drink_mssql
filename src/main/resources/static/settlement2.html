@@ -24,9 +24,9 @@
                 </div>
                 <table border="0" class="car_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td class="car_th" width="550">商品名称</td>
-                        <td class="car_th" width="150">购买数量</td>
-                        <td class="car_th" width="130">小计</td>
+                        <td class="car_th" width="550">Produktname</td>
+                        <td class="car_th" width="150">Menge</td>
+                        <td class="car_th" width="130">Total</td>
                     </tr>
 
                     <tr th:each="cart:${cartList}">
@@ -43,24 +43,24 @@
                 </table>
 
                 <div class="two_t">
-                    <span class="fr"></span>收货人信息
+                    <span class="fr"></span>Empfänger
                 </div>
                 <table border="0" class="peo_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td class="p_td" width="160">用户名称</td>
+                        <td class="p_td" width="160">Wirkliche&nbsp;Name</td>
                         <td width="395" th:text="${session.user.userName}"></td>
-                        <td class="p_td">登录名称</td>
+                        <td class="p_td">Benutzername</td>
                         <td th:text="${session.user.loginName}"></td>
                     </tr>
                     <tr>
-                        <td class="p_td">手机</td>
+                        <td class="p_td">Telefonnummer</td>
                         <td th:text="${session.user.mobile}"></td>
-                        <td class="p_td" width="160">电子邮件</td>
+                        <td class="p_td" width="160">E-Mail</td>
                         <td width="395" th:text="${session.user.email}"></td>
                     </tr>
                 </table>
                 <div class="two_t">
-                    <span class="fr"></span>选择地址
+                    <span class="fr"></span>Adresse
                 </div>
                 <form id="form" action="/orders/settlement3" method="post">
                     <table border="0" class="peo_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
@@ -75,11 +75,11 @@
 
                         <tr>
                             <td class="p_td" width="160">
-                                新地址<input type="radio" name="userAddress" value="newAddress">
+                                Neue&nbsp;Adresse<input type="radio" name="userAddress" value="newAddress">
                             </td>
                             <td>
-                                地址 <input type="text" value="" name="address" class="add_ipt"> 
-                                备注 <input type="text" value="" name="remark" class="add_ipt">
+                                Adresse <input type="text" value="" name="address" class="add_ipt"> 
+                                Anmerkung <input type="text" value="" name="remark" class="add_ipt">
                             </td>
                         </tr>
 
@@ -87,7 +87,7 @@
                     <table border="0" style="width:900px; margin-top:20px;" cellspacing="0" cellpadding="0">
                         <tr height="70">
                             <td align="right">
-                                <b style="font-size:14px;">应付款金额：<span id="totalprice" style="font-size:22px; color:#ff4e00;"></span></b>
+                                <b style="font-size:14px;">Gesamtsumme&nbsp;(inkl. MwSt.):&nbsp;<span id="totalprice" style="font-size:22px; color:#ff4e00;"></span></b>
                                 <input type="hidden" name="cost" id="settlement2_totalCost"/>
                             </td>
                         </tr>

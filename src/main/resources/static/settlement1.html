@@ -22,11 +22,11 @@
                    style="width: 1200px; margin-bottom: 50px;" cellspacing="0"
                    cellpadding="0">
                 <tr>
-                    <td class="car_th" width="200">商品名称</td>
-                    <td class="car_th" width="150">单价</td>
-                    <td class="car_th" width="150">购买数量</td>
-                    <td class="car_th" width="130">小计</td>
-                    <td class="car_th" width="150">操作</td>
+                    <td class="car_th" width="200">Produktname</td>
+                    <td class="car_th" width="150">Preis</td>
+                    <td class="car_th" width="150">Menge</td>
+                    <td class="car_th" width="130">Total</td>
+                    <td class="car_th" width="150">&nbsp;</td>
                 </tr>
 
 
@@ -51,15 +51,15 @@
                     <td align="center" style="color: #ff4e00;" class="qprice" th:text="'￥'+${cart.cost}"></td>
                     <td align="center">
                         <a href="javascript:void(0);"
-                           onclick="removeCart(this);" class="delete">删除</a></td>
+                           onclick="removeCart(this);" class="delete">Auslassen</a></td>
                 </tr>
 
 
                 <tr height="70">
                     <td colspan="6"
-                        style="font-family: 'Microsoft YaHei'; border-bottom: 0;"><span
-                            class="fr">商品总价：<b
-                            style="font-size: 22px; color: #ff4e00;" id="totalprice"></b></span></td>
+                        style="font-family: 'Microsoft YaHei'; border-bottom: 0; font-size: 18px;"><span
+                            class="fr">Gesamtsumme&nbsp;(inkl. MwSt.):&nbsp;<b
+                            style="font-size: 22px; color: #22a3e0;" id="totalprice"></b></span></td>
                 </tr>
                 <tr valign="top" height="150">
                     <td colspan="6" align="right">
