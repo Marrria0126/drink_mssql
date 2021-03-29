@@ -56,7 +56,6 @@
                     <div class="fre_ban">
                         <div id="imgPlay1" class="imgPlay1">
                             <ul class="imgs" id="actor1">
-
                                 <li th:each="productVO:${productCategory.productVOList}">
                                     <a th:href="'/product/findById/'+ ${productVO.id}"><img th:src="${productCategory.topImg}" width="211"/></a>
                                 </li>

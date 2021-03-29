@@ -46,8 +46,9 @@ public class User1Controller {
                 user.setGender(GenderEnum.WOMAN);
             }
             result = user1Service.save(user);
-        } catch (Exception e) {
-            model.addAttribute("error",user.getLoginName()+"Existierte! Bitte nochmal eingeben!");
+        }
+        catch (Exception e) {
+            model.addAttribute("error",user.getLoginName()+" ist bereits existiert! Bitte nochmal eingeben!");
             return "register";
         }
         if(result) return "login";
