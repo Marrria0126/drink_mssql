@@ -12,6 +12,7 @@ public class ProductCategoryVO {
     private String bannerImg;
     private String topImg;
     private List<ProductVO> productVOList;
+    private String rightImg;
 
      public ProductCategoryVO(Integer id, String name) {
          this.id = id;

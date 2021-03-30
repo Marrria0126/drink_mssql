@@ -83,12 +83,21 @@
                 </div>
                 <div class="fresh_right">
                     <ul>
+<!--                        <li th:each="productVO:${productCategory.productVOList}">-->
+<!--                            <a th:href="'/product/findById/'+ ${productVO.id}">-->
+<!--                                <img th:src="'/images/'+${productVO.rightImg}" height="220"/></a></li>-->
+<!--                        <li th:each="productVO:${productCategory.productVOList}">-->
+<!--                            <a th:href="'/product/findById/'+ ${productVO.id+1}">-->
+<!--                                <img th:src="'/images/'+${productVO.fileName+1}" height="220" style="margin-top: 5px" /></a></li>-->
+
                         <li th:each="productVO:${productCategory.productVOList}">
-                            <a th:href="'/product/findById/'+ ${productVO.id+6}">
-                                <img th:src="'/images/'+${productVO.fileName}" height="220"/></a></li>
-                        <li th:each="productVO:${productCategory.productVOList}">
-                            <a th:href="'/product/findById/'+ ${productVO.id+10}">
-                                <img th:src="'/images/'+${productVO.fileName}" height="220" style="margin-top: 5px" /></a></li>
+                            <a th:href="'/product/findById/'+ ${productVO.id}">
+                                <img th:src="'/images/'+${productCategory.rightImg}" height="220"
+                        /></a></li>
+<!--                        <li th:each="productVO:${productCategory.productVOList}">-->
+<!--                            <a th:href="'/product/findById/'+ ${productVO.id+6}">-->
+<!--                                <img src="/images/13.png" height="220"-->
+<!--                                                               style="margin-top: 5px" /></a></li>-->
                     </ul>
                 </div>
             </div>
