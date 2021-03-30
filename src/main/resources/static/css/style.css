@@ -1901,10 +1901,19 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 
 .fresh_right ul li {
     width: 260px;
+    height: 441px;
+    overflow: hidden;
+    border-bottom: 1px solid #eaeaea;
+}
+.fresh_right ul li ul{
+    width: 260px;
     height: 220px;
     overflow: hidden;
     border-bottom: 1px solid #eaeaea;
 }
+
+
+
 
 /*---------------首页（食品饮料）---------------*/
 .food_left {

@@ -13,7 +13,7 @@ public class ProductCategoryVO {
     private String topImg;
     private List<ProductVO> productVOList;
     private String rightImg;
-
+    private String right2Img;
      public ProductCategoryVO(Integer id, String name) {
          this.id = id;
          this.name = name;

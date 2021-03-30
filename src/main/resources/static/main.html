@@ -82,18 +82,31 @@
                     </ul>
                 </div>
                 <div class="fresh_right">
+<!--                    <div class="fre_ban">-->
+<!--                        <div id="imgPlay1" class="imgPlay1">-->
+<!--                            <ul class="imgs" id="actor1">-->
                     <ul>
+<!--                    <ul class="imgs">-->
 <!--                        <li th:each="productVO:${productCategory.productVOList}">-->
 <!--                            <a th:href="'/product/findById/'+ ${productVO.id}">-->
 <!--                                <img th:src="'/images/'+${productVO.rightImg}" height="220"/></a></li>-->
 <!--                        <li th:each="productVO:${productCategory.productVOList}">-->
 <!--                            <a th:href="'/product/findById/'+ ${productVO.id+1}">-->
 <!--                                <img th:src="'/images/'+${productVO.fileName+1}" height="220" style="margin-top: 5px" /></a></li>-->
-
+<!--                        <a th:href="'/product/findById/'+ ${productVO.id}"><img th:src="${productCategory.topImg}" width="211"/></a>-->
                         <li th:each="productVO:${productCategory.productVOList}">
-                            <a th:href="'/product/findById/'+ ${productVO.id}">
-                                <img th:src="'/images/'+${productCategory.rightImg}" height="220"
-                        /></a></li>
+                            <a th:href="'/product/findById/'+ ${productVO.id+1}">
+                                <img th:src="${productCategory.rightImg}" height="220"/>
+                            </a>
+                            <ul th:each="productVO:${productCategory.productVOList}">
+                               <a th:href="'/product/findById/'+ ${productVO.id+2}">
+                                <img th:src="${productCategory.right2Img}" height="220" style="margin-top: 5px"/>
+                            </a>
+
+                            </ul>
+                        </li>
+
+
 <!--                        <li th:each="productVO:${productCategory.productVOList}">-->
 <!--                            <a th:href="'/product/findById/'+ ${productVO.id+6}">-->
 <!--                                <img src="/images/13.png" height="220"-->
@@ -102,7 +115,7 @@
                 </div>
             </div>
         </div>
-
+            </div>
 </div>
 
 <th:block th:include="common.html :: footer"></th:block>

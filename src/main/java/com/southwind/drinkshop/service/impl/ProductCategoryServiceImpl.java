@@ -43,7 +43,8 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
         for (int i = 0; i < levelOneVO.size(); i++) {
             levelOneVO.get(i).setBannerImg("/images/banner"+i+".png");
             levelOneVO.get(i).setTopImg("/images/top"+i+".png");
-            levelOneVO.get(i).setRightImg("/images/right"+i+".png");//
+            levelOneVO.get(i).setRightImg("/images/right"+i+".png");
+            levelOneVO.get(i).setRight2Img("/images/right_"+i+".png");
             wrapper = new QueryWrapper();
             wrapper.eq("categorylevelone_id",levelOneVO.get(i).getId());
             List<Product> productList = productMapper.selectList(wrapper);
