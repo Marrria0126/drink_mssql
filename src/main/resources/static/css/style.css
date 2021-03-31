@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-size: 12px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     line-height: 25px;
     color: #555555;
 }
@@ -74,7 +74,7 @@ html { overflow-y:scroll; filter:progid:DXImageTransform.Microsoft.BasicImage(gr
     min-width: 1200px;
     height: 35px;
     background-color: #f6f6f6;
-    font-family: "宋体";
+    font-family: "times new roman";
 }
 
 .sou {
@@ -129,7 +129,7 @@ html { overflow-y:scroll; filter:progid:DXImageTransform.Microsoft.BasicImage(gr
     height: 460px;
     overflow: hidden;
     background-color: #FFF;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     margin-top: 6px;
     border: 1px solid #cdcdcd;
 }
@@ -221,7 +221,7 @@ table.c_tab tr th {
 .ss_list_c {
     overflow: hidden;
     background-color: #FFF;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     margin-top: 6px;
     padding: 10px 0;
     border: 1px solid #cdcdcd;
@@ -292,7 +292,7 @@ table.c_tab tr th {
     overflow: hidden;
     color: #555555;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     float: left;
     padding: 0 10px;
     border: 2px solid #22a3e0;
@@ -308,7 +308,7 @@ table.c_tab tr th {
     background-color: #22a3e0;
     color: #FFF;
     font-size: 16px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     text-align: center;
     float: left;
     border: 0;
@@ -395,7 +395,7 @@ ul.cars li .name {
     line-height: 20px;
     overflow: hidden;
     color: #888888;
-    font-family: "宋体";
+    font-family: "times new roman";
     float: left;
     display: inline;
     margin-left: 8px;
@@ -470,9 +470,10 @@ ul.cars li .price {
     height: 43px;
     line-height: 43px;
     color: #3e3e3e;
-    font-size: 16px;
+    font-size: 18px;
     position: relative;
     z-index: 800;
+    font-family: "times new roman";
 }
 
 ul.menu_r {
@@ -485,14 +486,14 @@ ul.menu_r {
 }
 
 ul.menu_r li {
-    width: 85px;
+    width: 100px;
     height: 40px;
     line-height: 40px;
     overflow: hidden;
     text-align: center;
     float: left;
     display: inline;
-    margin-right: 10px;
+    /*margin-right: 5px;*/
 }
 
 ul.menu_r li a {
@@ -501,6 +502,7 @@ ul.menu_r li a {
     overflow: hidden;
     float: left;
     color: #3e3e3e;
+    margin-left: 10px;
 }
 
 ul.menu_r li a:hover, ul.menu_r li a.now {
@@ -523,7 +525,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 .nav {
     width: 211px;
     height: 45px;
-    background-color: #2C5B82;
+    background-color: #2c5b82;
     /*#0767948*/
     position: absolute;
     left: 0px;
@@ -536,14 +538,16 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     line-height: 43px;
     overflow: hidden;
     color: #FFF;
-    font-size: 16px;
+    font-size: 20px;
     text-indent: 35px;
+    font-family: "times new roman";
 }
 
 .leftNav {
     width: 211px;
     height: 420px;
-    background-color: #5b9bcf;
+    /*background-color: #5b9bcf;*/
+    background-image: linear-gradient(#3975a8, #70afe3);
     /*#565656  #22a3e0 #2096d0*/
     position: absolute;
     left: 0;
@@ -559,8 +563,11 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     line-height: 60px;
     background: url(../images/n_arrow.gif) no-repeat 195px center;
     color: #FFF;
-    font-size: 14px;
+    font-family: "times new roman";
+    font-size: 20px;
+    margin-top: 10px;
     margin-left: 1px;
+    margin-bottom: 10px;
     cursor: pointer;
     position: relative;
 }
@@ -674,10 +681,13 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
 }
 
 .leftNav .zj {
-    width: 989px;
+    width: 400px;
+    /*989*/
     height: 411px;
+    /*411*/
     overflow: hidden;
-    background-color: #FFF;
+    background-color: rgb(94, 157, 210, 0.7);
+    /*background-image: linear-gradient(#006b9c, #76c0e7);*/
     position: absolute;
     left: 210px;
     top: 0;
@@ -689,46 +699,63 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     height: 385px;
     overflow: hidden;
     float: left;
-    display: inline;
-    margin-left: 20px;
-    margin-top: 15px;
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
 .leftNav .zj .zj_l_c {
-    width: 280px;
+    width: 400px;
     height: 108px;
     line-height: 25px;
     overflow: hidden;
-    color: #dbdbdb;
+    color: #DBDBDB;
     float: left;
     display: inline;
-    margin-right: 50px;
+    margin-right: 150px;
     margin-bottom: 25px;
 }
 
 .leftNav .zj .zj_l_c h2 {
     height: 25px;
+    /*25*/
     line-height: 25px;
-    color: #3e3e3e;
-    font-size: 14px;
+    /*25*/
+    color: #c2ad88;
+    font-size: 24px;
+    /*14*/
     font-weight: bold;
-    margin-bottom: 5px;
-    margin-left: 10px;
+    margin-bottom: 8px;
+    margin-left: 15px;
+    margin-right: 50px;
+
 }
 
 .leftNav .zj .zj_l_c a {
     line-height: 22px;
-    font-size: 12px;
-    font-family: "宋体";
-    padding: 0 10px;
-    margin: 0;
+    /*22px*/
+    font-size: 16px;
+    /*12*/
+    margin-right: 10px;
+    /*color: #143a58;*/
+    font-family: "times new roman";
+    padding: 10px 10px;
+    margin: 10px;
+    color: white;
+    text-shadow: 0 0 20px #fdec84,
+    10px -10px 30px #ffae35,
+    20px -20px 40px #ec760c,
+    -20px -60px 50px #cd4607,
+    0px -80px 60px #973717,
+    10px -40px 70px #451b0e;
 }
 
 .leftNav .zj .zj_r {
-    width: 236px;
+    width: 400px;
+    /*236*/
     height: 402px;
     overflow: hidden;
-    float: right;
+    float:left;
     display: inline;
     margin-right: 10px;
     margin-top: 5px;
@@ -1063,7 +1090,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background-color: #FFF;
     color: #555555;
     font-size: 12px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     font-size: 15px;
     padding: 0 10px;
     border: 1px solid #d9d9d9;
@@ -1078,7 +1105,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     zoom: 1;
     color: #555555;
     font-size: 12px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     position: relative;
     z-index: 0;
     vertical-align: middle;
@@ -1168,7 +1195,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background-color: #ff4e00;
     color: #FFF;
     font-size: 12px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     text-align: center;
     float: left;
     border: 0;
@@ -2577,7 +2604,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background-color: #FFF;
     color: #888888;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     padding: 0 40px 0 10px;
     border: 1px solid #cccccc;
 }
@@ -2591,7 +2618,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background-color: #FFF;
     color: #888888;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     padding: 0 40px 0 10px;
     border: 1px solid #cccccc;
 }
@@ -2605,7 +2632,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background-color: #FFF;
     color: #888888;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     padding: 0 40px 0 10px;
     border: 1px solid #cccccc;
 }
@@ -2619,7 +2646,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background-color: #FFF;
     color: #888888;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     padding: 0 40px 0 10px;
     border: 1px solid #cccccc;
 }
@@ -2633,7 +2660,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background-color: #FFF;
     color: #888888;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     padding: 0 40px 0 10px;
     border: 1px solid #cccccc;
 }
@@ -2647,7 +2674,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background-color: #FFF;
     color: #888888;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     padding: 0 40px 0 10px;
     border: 1px solid #cccccc;
 }
@@ -2660,7 +2687,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background-color: #FFF;
     color: #888888;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     padding: 0 10px;
     border: 1px solid #cccccc;
 }
@@ -2673,7 +2700,7 @@ ul.menu_r li a:hover, ul.menu_r li a.now {
     background: url(../images/btn_log.gif) repeat-x center top;
     color: #FFF;
     font-size: 16px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     text-align: center;
     padding: 0;
     border: 0;
@@ -2761,7 +2788,7 @@ ul.cate li {
     height: 20px;
     overflow: hidden;
     color: #888888;
-    font-family: "宋体";
+    font-family: "times new roman";
     float: left;
     display: inline;
     margin-left: 12px;
@@ -3254,7 +3281,7 @@ ul.cate li {
     height: 40px;
     line-height: 40px;
     overflow: hidden;
-    font-family: "宋体";
+    font-family: "times new roman";
 }
 
 .n_ch {
@@ -3387,7 +3414,7 @@ table.choice tr td.td_a a:hover, table.choice tr td.td_a a.now {
     height: 39px;
     line-height: 39px;
     overflow: hidden;
-    font-family: "宋体";
+    font-family: "times new roman";
     border-bottom: 1px solid #eaeaea;
 }
 
@@ -3501,7 +3528,7 @@ ul.cate_list li .carbg {
     width: 209px;
     height: 30px;
     overflow: hidden;
-    font-family: "宋体";
+    font-family: "times new roman";
     margin-top: 15px;
 }
 
@@ -3563,7 +3590,7 @@ ul.cate_list li:hover .carbg a.j_car {
     padding: 20px 10px;
     text-align: right;
     font-size: 16px;
-    font-family: "宋体";
+    font-family: "times new roman";
     margin-top: 20px;
 }
 
@@ -3696,7 +3723,7 @@ ul.brand li .name span {
     height: 30px;
     line-height: 32px;
     overflow: hidden;
-    font-family: "宋体";
+    font-family: "times new roman";
     margin-top: 25px;
     margin-bottom: 20px;
 }
@@ -3704,19 +3731,19 @@ ul.brand li .name span {
 .des_price b {
     color: #ff3200;
     font-size: 18px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
 }
 
 .des_price span {
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
 }
 
 .des_choice {
     line-height: 40px;
     overflow: hidden;
     color: #888888;
-    font-family: "宋体";
+    font-family: "times new roman";
 }
 
 .des_choice ul li {
@@ -3725,7 +3752,7 @@ ul.brand li .name span {
     overflow: hidden;
     font-size: 14px;
     text-align: center;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     float: left;
     display: inline;
     margin-right: 10px;
@@ -3780,7 +3807,7 @@ ul.brand li .name span {
     line-height: 27px;
     background: url(../images/sh.png) no-repeat 12px 5px;
     text-indent: 32px;
-    font-family: "宋体";
+    font-family: "times new roman";
     float: left;
     border: 1px solid #FFF;
     cursor: pointer;
@@ -3849,7 +3876,7 @@ ul.brand li .name span {
     color: #555555;
     font-size: 18px;
     text-align: center;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     float: left;
     padding: 0;
     border: 0;
@@ -4037,7 +4064,7 @@ ul.brand li .name span {
     color: #555555;
     font-size: 16px;
     text-align: center;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     padding: 0;
     margin: 5px auto 10px auto;
     border: 1px solid #eaeaea;
@@ -4072,7 +4099,7 @@ table.jud_tab {
 .jud_bg {
     background: url(../images/s_line.gif) no-repeat left center;
     padding: 0 30px;
-    font-family: "宋体";
+    font-family: "times new roman";
     line-height: 22px;
 }
 
@@ -4080,7 +4107,7 @@ table.jud_list tr td {
     border-collapse: collapse;
     border-bottom: 1px solid #eaeaea;
     padding: 20px;
-    font-family: "宋体";
+    font-family: "times new roman";
     line-height: 22px;
 }
 
@@ -4124,7 +4151,7 @@ table.jud_list tr td {
     line-height: 30px;
     overflow: hidden;
     font-size: 16px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     margin: 1px auto;
 }
 
@@ -4142,7 +4169,7 @@ table.jud_list tr td {
     background-color: #ff4e00;
     color: #FFF;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     text-align: center;
     float: left;
     display: inline;
@@ -4162,7 +4189,7 @@ table.jud_list tr td {
     background-color: #f6f6f6;
     color: #ff4e00;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     text-align: center;
     float: left;
     display: inline;
@@ -4680,7 +4707,7 @@ ul.p_sell li .times {
     line-height: 30px;
     background: url(../images/sh.png) no-repeat left 8px;
     text-indent: 20px;
-    font-family: "宋体";
+    font-family: "times new roman";
     float: left;
     display: inline;
     margin-right: 30px;
@@ -4739,7 +4766,7 @@ ul.p_sell li .times {
 .lim_c {
     width: 275px;
     overflow: hidden;
-    font-family: "宋体";
+    font-family: "times new roman";
     color: #888888;
     margin-top: 15px;
     padding-bottom: 15px;
@@ -4754,7 +4781,7 @@ ul.p_sell li .times {
     color: #555555;
     font-size: 14px;
     text-align: center;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     float: left;
     padding: 0;
     border: 1px solid #cccccc;
@@ -4866,7 +4893,7 @@ ul.p_sell li .times {
     overflow: hidden;
     color: #555555;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     float: left;
     padding: 0 10px;
     border: 0;
@@ -4879,7 +4906,7 @@ ul.p_sell li .times {
     background-color: #f6f6f6;
     color: #555555;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     text-align: center;
     float: right;
     border: 0;
@@ -5034,13 +5061,13 @@ table.mon_tab tr td {
 
 table.mon_tab tr td span {
     font-weight: bold;
-    font-family: "宋体";
+    font-family: "times new roman";
     color: #ff4e00;
 }
 
 table.acc_tab {
     background-color: #f6f6f6;
-    font-family: "宋体";
+    font-family: "times new roman";
 }
 
 table.acc_tab tr td {
@@ -5052,7 +5079,7 @@ table.acc_tab tr td {
 table.acc_tab tr td.td_l {
     background-color: #f7ece8;
     width: 110px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
 }
 
 table.acc_tab tr td.b_none {
@@ -5079,7 +5106,7 @@ table.order_tab tr td {
     zoom: 1;
     color: #555555;
     font-size: 12px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     position: relative;
     z-index: 0;
     vertical-align: middle;
@@ -5172,7 +5199,7 @@ table.order_tab tr td {
     background-color: #ff4e00;
     color: #FFF;
     font-size: 12px;
-    font-family: "宋体";
+    font-family: "times new roman";
     text-align: center;
     margin-left: 10px;
     border: 0;
@@ -5225,7 +5252,7 @@ table.add_tab tr td {
     zoom: 1;
     color: #555555;
     font-size: 12px;
-    font-family: "宋体";
+    font-family: "times new roman";
     position: relative;
     z-index: 0;
     vertical-align: middle;
@@ -5319,7 +5346,7 @@ table.add_tab tr td {
     background-color: #f6f6f6;
     color: #555555;
     font-size: 12px;
-    font-family: "宋体";
+    font-family: "times new roman";
     padding: 0 10px;
     border: 1px solid #d9d9d9;
 }
@@ -5332,7 +5359,7 @@ a.add_b {
     background-color: #ff4e00;
     color: #FFF;
     font-size: 12px;
-    font-family: "宋体";
+    font-family: "times new roman";
     text-align: center;
     margin-left: 10px;
     border: 0;
@@ -5359,7 +5386,7 @@ a.add_b {
     background-color: #f6f6f6;
     color: #555555;
     font-size: 12px;
-    font-family: "宋体";
+    font-family: "times new roman";
     padding: 10px;
     border: 1px solid #d9d9d9;
 }
@@ -5384,7 +5411,7 @@ a.add_b {
     background-color: #ff4e00;
     color: #FFF;
     font-size: 12px;
-    font-family: "宋体";
+    font-family: "times new roman";
     text-align: center;
     padding: 0 18px;
     border: 0;
@@ -5398,7 +5425,7 @@ a.add_b {
     overflow: hidden;
     color: #555555;
     font-size: 12px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     padding: 0 10px;
     border: 1px solid #eaeaea;
 }
@@ -5572,7 +5599,7 @@ table.co_tab tr td {
     overflow: hidden;
     color: #555555;
     font-size: 12px;
-    font-family: "宋体";
+    font-family: "times new roman";
     margin-left: 15px;
     padding: 0;
     border: 0;
@@ -5585,7 +5612,7 @@ table.co_tab tr td {
     overflow: hidden;
     color: #555555;
     font-size: 12px;
-    font-family: "宋体";
+    font-family: "times new roman";
     margin-left: 15px;
     margin-bottom: 10px;
     padding: 0;
@@ -5596,7 +5623,7 @@ table.co_tab tr td {
 table.car_tab {
     border-collapse: collapse;
     border: 1px solid #eaeaea;
-    font-family: "宋体";
+    font-family: "times new roman";
 }
 
 table.car_tab tr td {
@@ -5612,7 +5639,7 @@ table.car_tab tr td.car_th {
     font-size: 14px;
     border-right: 1px solid #eaeaea;
     padding: 8px 20px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     text-align: center;
 }
 
@@ -5645,7 +5672,7 @@ table.car_tab tr td.car_th {
     color: #555555;
     font-size: 14px;
     text-align: center;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     float: left;
     padding: 0;
     border: 0;
@@ -5696,7 +5723,7 @@ table.car_tab tr td.car_th {
 
 .two_t span {
     font-size: 12px;
-    font-family: "宋体";
+    font-family: "times new roman";
     color: #ff4e00;
 }
 
@@ -5707,7 +5734,7 @@ table.car_tab tr td.car_th {
 table.peo_tab {
     border-collapse: collapse;
     border: 1px solid #eaeaea;
-    font-family: "宋体";
+    font-family: "times new roman";
     font-size: 14px;
 }
 
@@ -5720,7 +5747,7 @@ table.peo_tab tr td {
 table.peo_tab tr td.p_td {
     background-color: #f6f6f6;
     font-size: 14px;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     text-align: right;
     padding-right: 40px;
     padding-left: 0;
@@ -5738,7 +5765,7 @@ ul.pay li {
     overflow: hidden;
     font-size: 14px;
     text-align: center;
-    font-family: "Microsoft YaHei";
+    font-family: "times new roman";
     float: left;
     display: inline;
     margin-right: 10px;
@@ -5964,7 +5991,7 @@ ul.pay li.checked .ch_img {
     width: 1200px;
     overflow: hidden;
     color: #999999;
-    font-family: "宋体";
+    font-family: "times new roman";
     text-align: center;
 }
 
@@ -5989,125 +6016,4 @@ ul.pay li.checked .ch_img {
 
 /*siming*/
 /*FOOTER*/
-
-footer {
-    background: #16222A;
-    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
-    background: linear-gradient(59deg, #3A6073, #16222A);
-    color: white;
-    margin-top:100px;
-}
-/*footer {*/
-/*    background: #16222A;*/
-/*    background: -webkit-linear-gradient(59deg, #D66D75, #E29587);*/
-/*    background: linear-gradient(59deg, #D66D75, #E29587);*/
-/*    color: white;*/
-/*    margin-top:100px;*/
-/*}*/
-
-footer a {
-    color: #fff;
-    /*color: #000779;*/
-    font-size: 14px;
-    transition-duration: 0.2s;
-}
-
-footer a:hover {
-    color: #FA944B;
-    text-decoration: none;
-}
-
-.copy {
-    font-size: 12px;
-    padding: 10px;
-    border-top: 1px solid #FFFFFF;
-}
-
-.footer-middle {
-    padding-top: 2em;
-    color: white;
-}
-
-
-/*SOCİAL İCONS*/
-
-/* footer social icons */
-
-ul.social-network {
-    list-style: none;
-    display: inline;
-    margin-left: 0 !important;
-    padding: 0;
-}
-
-ul.social-network li {
-    display: inline;
-    margin: 0 5px;
-}
-
-
-/* footer social icons */
-
-.social-network a.icoFacebook:hover {
-    background-color: #3B5998;
-}
-
-.social-network a.icoLinkedin:hover {
-    background-color: #007bb7;
-}
-
-.social-network a.icoFacebook:hover i,
-.social-network a.icoLinkedin:hover i {
-    color: #fff;
-}
-
-.social-network a.socialIcon:hover,
-.socialHoverClass {
-    color: #44BCDD;
-}
-
-.social-circle li a {
-    display: inline-block;
-    position: relative;
-    margin: 0 auto 0 auto;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    font-size: 15px;
-}
-
-.social-circle li i {
-    margin: 0;
-    line-height: 30px;
-    text-align: center;
-}
-
-.social-circle li a:hover i,
-.triggeredHover {
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -ms--transform: rotate(360deg);
-    transform: rotate(360deg);
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    transition: all 0.2s;
-}
-
-.social-circle i {
-    color: #595959;
-    -webkit-transition: all 0.8s;
-    -moz-transition: all 0.8s;
-    -o-transition: all 0.8s;
-    -ms-transition: all 0.8s;
-    transition: all 0.8s;
-}
-
-.social-network a {
-    background-color: #F9F9F9;
-}
 
