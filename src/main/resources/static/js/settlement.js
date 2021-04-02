@@ -4,10 +4,12 @@ $(function(){
     var totalCost = 0;
     for(var i = 0;i < array.length;i++){
         //Math.round(parseFloat("234432.9")-parseFloat"0.2"))
-        var val =  parseFloat($(".qprice").eq(i).html().substring(1)) ;
+        // Math.floor(15.7784514000 * 100) / 100
+        var val = Math.floor( parseInt($(".qprice").eq(i).html().substring(1)).toFixed(2) * 100) / 100;
         totalCost += val;
     }
-    $("#totalprice").html(totalCost+"€");
+
+    $("#totalprice").html("€"+totalCost );
     //settlement2使用
     $("#settlement2_totalCost").val(totalCost);
 });
@@ -64,7 +66,8 @@ function addQuantity(obj) {
         return false;
     }
     quantity++;
-    let price = parseFloat($(".productPrice").eq(index).val());
+    //toFixed(2)
+    let price =  Math.floor(parseFloat($(".productPrice").eq(index).val()).toFixed(2)* 100) / 100;
     let cost = quantity * price;
     let id = parseInt($(".id").eq(index).val());
     //将最新的quantity cost发给后台，动态更新数据库
@@ -81,11 +84,21 @@ function addQuantity(obj) {
 
                 let array = $(".qprice");
                 let totalCost = 0;
+
                 for(let i = 0;i < array.length;i++){
-                    let val = parseInt($(".qprice").eq(i).html().substring(1));
+                    // Math.floor( parseInt($(".qprice").eq(i).html().substring(1)).toFixed(2) * 100) / 100;
+                    let val = Math.floor(parseInt($(".qprice").eq(i).html().substring(1)).toFixed(2) * 100) / 100;
+                    //.toFixed(2)
                     totalCost += val;
+                    // totalCost += Math.floor(parseInt(val.toFixed(2) * 100) / 100;
+
                 }
-                $("#totalprice").html("€"+totalCost);
+                //val
+                // let yushu = 0;
+                // yushu=totalCost;
+
+                // $("#totalprice").html("€"+totalCost/100+"."+yushu2);
+                $("#totalprice").html("€"+totalCost );
             }
         }
     });
@@ -139,7 +152,8 @@ function subQuantity(obj) {
         return false;
     }
     quantity--;
-    let price = parseFloat($(".productPrice").eq(index).val());
+    // .toFixed(2)
+    let price = Math.floor(parseFloat($(".productPrice").eq(index).val()).toFixed(2)* 100) / 100;
     let cost = quantity * price;
     let id = parseInt($(".id").eq(index).val());
 
@@ -153,11 +167,23 @@ function subQuantity(obj) {
 
                 let array = $(".qprice");
                 let totalCost = 0;
+
                 for(let i = 0;i < array.length;i++){
-                    let val = parseInt($(".qprice").eq(i).html().substring(1));
+                // Math.floor(     .toFixed(2) * 100) / 100;
+                    let val = Math.floor(parseInt($(".qprice").eq(i).html().substring(1)).toFixed(2) * 100) / 100;
+                // .toFixed(2)
                     totalCost += val;
+
+                    // totalCost += Math.floor(parseInt(val.toFixed(2) * 100) / 100;
                 }
-                $("#totalprice").html("€"+totalCost);
+                // let yushu = 0;
+                // yushu=totalCost;
+                // var yushu2;
+                // yushu2 = yushu %100;
+                // totalCost ->val
+                // $("#totalprice").html("€"+totalCost/100+"."+yushu2);
+
+                $("#totalprice").html("€"+totalCost  );
             }
         }
     });
