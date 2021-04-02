@@ -3,7 +3,8 @@ $(function(){
     var array = $(".qprice");
     var totalCost = 0;
     for(var i = 0;i < array.length;i++){
-        var val = parseFloat($(".qprice").eq(i).html().substring(1));
+        //Math.round(parseFloat("234432.9")-parseFloat"0.2"))
+        var val =  parseFloat($(".qprice").eq(i).html().substring(1)) ;
         totalCost += val;
     }
     $("#totalprice").html(totalCost+"€");
@@ -32,12 +33,12 @@ $(function(){
 //         success:function (data) {
 //             if(data == "success"){
 //                 //更新toSettlement的数据
-//                 $(".qprice").eq(index).html("￥"+cost);
+//                 $(".qprice").eq(index).html("€"+cost);
 //                 inputObj.val(quantity);
 //                 if(quantity < stock){
 //                     var totalCost = parseInt($("#totalprice").html().substring(1));
 //                     totalCost += price;
-//                     $("#totalprice").html("￥"+totalCost);
+//                     $("#totalprice").html("€"+totalCost);
 //                 }
 //                 //更新searchBar的数据
 //                 $(".quantity").eq(index).text(quantity);
@@ -49,7 +50,7 @@ $(function(){
 //                     var val = parseInt($(".cost").eq(i).html());
 //                     totalCost += val;
 //                 }
-//                 $("#totalCost").html("￥"+totalCost);
+//                 $("#totalCost").html("€"+totalCost);
 //             }
 //         }
 //     });
@@ -75,7 +76,7 @@ function addQuantity(obj) {
         type:"POST",
         success:function (data) {
             if(data == "success"){
-                $(".qprice").eq(index).text('￥'+cost);
+                $(".qprice").eq(index).text('€'+cost);
                 $(".car_ipt").eq(index).val(quantity);
 
                 let array = $(".qprice");
@@ -84,7 +85,7 @@ function addQuantity(obj) {
                     let val = parseInt($(".qprice").eq(i).html().substring(1));
                     totalCost += val;
                 }
-                $("#totalprice").html("￥"+totalCost);
+                $("#totalprice").html("€"+totalCost);
             }
         }
     });
@@ -109,12 +110,12 @@ function addQuantity(obj) {
 //         dataType:"text",
 //         success:function(data){
 //             if(data == "success"){
-//                 $(".qprice").eq(index).html("￥"+cost);
+//                 $(".qprice").eq(index).html("€"+cost);
 //                 inputObj.val(quantity);
 //                 if(quantity!=1){
 //                     var totalCost = parseInt($("#totalprice").html().substring(1));
 //                     totalCost -= price;
-//                     $("#totalprice").html("￥"+totalCost);
+//                     $("#totalprice").html("€"+totalCost);
 //                 }
 //                 $(".quantity").eq(index).text(quantity);
 //                 $(".cost").eq(index).text(cost);
@@ -125,7 +126,7 @@ function addQuantity(obj) {
 //                     var val = parseInt($(".cost").eq(i).html());
 //                     totalCost += val;
 //                 }
-//                 $("#totalCost").html("￥"+totalCost);
+//                 $("#totalCost").html("€"+totalCost);
 //             }
 //         }
 //     });
@@ -147,7 +148,7 @@ function subQuantity(obj) {
         type:"POST",
         success:function (data) {
             if(data == "success"){
-                $(".qprice").eq(index).text('￥'+cost);
+                $(".qprice").eq(index).text('€'+cost);
                 $(".car_ipt").eq(index).val(quantity);
 
                 let array = $(".qprice");
@@ -156,7 +157,7 @@ function subQuantity(obj) {
                     let val = parseInt($(".qprice").eq(i).html().substring(1));
                     totalCost += val;
                 }
-                $("#totalprice").html("￥"+totalCost);
+                $("#totalprice").html("€"+totalCost);
             }
         }
     });
