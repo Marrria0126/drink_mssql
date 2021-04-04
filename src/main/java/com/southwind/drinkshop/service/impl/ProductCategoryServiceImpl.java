@@ -33,13 +33,13 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
 
     @Override
     public List<ProductCategoryVO> getAllProductCategoryVO() {
-        //一级分类
+        //List Levelone
         QueryWrapper wrapper = new QueryWrapper();
         wrapper.eq("type",1);
         List<ProductCategory> levelOne = productCategoryMapper.selectList(wrapper);
         List<ProductCategoryVO> levelOneVO = levelOne.stream().map(e -> new ProductCategoryVO(e.getId(),e.getName())).collect(Collectors.toList());
-        //图片赋值
-        //商品信息赋值
+        //Daten den Bildern
+        //Daten den Produktinformationen
         for (int i = 0; i < levelOneVO.size(); i++) {
             levelOneVO.get(i).setBannerImg("/images/banner"+i+".png");
             levelOneVO.get(i).setTopImg("/images/top"+i+".png");
