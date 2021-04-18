@@ -149,9 +149,9 @@
                     </li>
                 </ul>
                 <div class="price_sum">Zwischensumme&nbsp;<font color="#22a3e0"></font><span id="totalCost"></span></div>
+<!--                <div class="price_sum">Zwischensumme&nbsp;<font color="#22a3e0"></font><span id="totalCost"></span></div>-->
                 <div class="price_a"><a href="/cart/findAllCart">Warenkorb&nbsp;ansehen</a></div>
             </div>
-
         </div>
     </div>
     <!-- search -->
@@ -162,7 +162,7 @@
             var totalCost = 0;
             for(var i = 0;i < array.length;i++){
                 var val = parseFloat($(".cost").eq(i).html());
-                totalCost += val;
+                totalCost = Math.round(parseFloat((totalCost + val)*100))/100;
             }
             $("#totalCost").html(totalCost+"€");
         });
