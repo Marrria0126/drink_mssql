@@ -3,7 +3,7 @@ package com.southwind.drinkshop.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.southwind.drinkshop.entity.*;
 import com.southwind.drinkshop.mapper.*;
-import com.southwind.drinkshop.service.OrderService;
+import com.southwind.drinkshop.service.OrdersService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.southwind.drinkshop.vo.OrderDetailVO;
 import com.southwind.drinkshop.vo.OrderVO;
@@ -22,10 +22,10 @@ import java.util.stream.Collectors;
  * </p>
  *
  * @author Yihong
- * @since 2021-03-06
+ * @since 2021-04-19
  */
 @Service
-public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implements OrderService {
+public class OrdersServiceImpl extends ServiceImpl<OrdersMapper, Orders> implements OrdersService {
 
     @Autowired
     private UserAddressMapper userAddressMapper;
@@ -34,7 +34,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
     private CartMapper cartMapper;
 
     @Autowired
-    private OrderMapper orderMapper;
+    private OrdersMapper ordersMapper;
 
     @Autowired
     private OrderDetailMapper orderDetailMapper;
@@ -76,7 +76,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
             e.printStackTrace();
         }
         orders.setSerialnumber(seriaNumber);
-        orderMapper.insert(orders);
+        ordersMapper.insert(orders);
 
         //存储ordersdetail
         QueryWrapper wrapper = new QueryWrapper();
@@ -101,7 +101,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
     public List<OrderVO> findAllOrederVOByUserId(Integer id) {
         QueryWrapper wrapper = new QueryWrapper();
         wrapper.eq("user_id",id);
-        List<Orders> ordersList = orderMapper.selectList(wrapper);
+        List<Orders> ordersList = ordersMapper.selectList(wrapper);
         //VO转换
 //        List<OrderVO> orderVOList = new ArrayList<>();
 //        for (Orders orders : ordersList) {
@@ -136,4 +136,6 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Orders> implement
         return orderVOList;
     }
 }
+
+
 

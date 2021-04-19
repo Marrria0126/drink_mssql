@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class OrdersServiceTest {
 
     @Autowired
-    private OrderService service;
+    private OrdersService service;
 
     @Test
     void test(){

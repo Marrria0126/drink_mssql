@@ -4,7 +4,7 @@ package com.southwind.drinkshop.controller;
 import com.southwind.drinkshop.entity.Orders;
 import com.southwind.drinkshop.entity.User1;
 import com.southwind.drinkshop.service.CartService;
-import com.southwind.drinkshop.service.OrderService;
+import com.southwind.drinkshop.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,22 +21,22 @@ import javax.servlet.http.HttpSession;
  * </p>
  *
  * @author Yihong
- * @since 2021-03-06
+ * @since 2021-04-19
  */
 @Controller
-@RequestMapping("/orders")
-public class OrderController {
+@RequestMapping("//orders")
+public class OrdersController {
 
     @Autowired
-    private OrderService orderService;
+    private OrdersService ordersService;
 
     @Autowired
     private CartService cartService;
 
     @PostMapping("/settlement3")
-    public ModelAndView settlement3(Orders orders, HttpSession session,String address,String remark) {
+    public ModelAndView settlement3(Orders orders, HttpSession session, String address, String remark) {
         User1 user = (User1) session.getAttribute("user");
-        orderService.save(orders,user,address,remark);
+        ordersService.save(orders,user,address,remark);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("settlement3");
         modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
@@ -48,9 +48,8 @@ public class OrderController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("orderList");
         User1 user = (User1) session.getAttribute("user");
-        modelAndView.addObject("list",orderService.findAllOrederVOByUserId(user.getId()));
+        modelAndView.addObject("list",ordersService.findAllOrederVOByUserId(user.getId()));
         modelAndView.addObject("cartList",cartService.findAllCartVOByUserId(user.getId()));
         return modelAndView;
     }
 }
-

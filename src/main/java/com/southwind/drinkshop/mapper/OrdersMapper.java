@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author Yihong
- * @since 2021-03-06
+ * @since 2021-04-19
  */
-public interface OrderMapper extends BaseMapper<Orders> {
+public interface OrdersMapper extends BaseMapper<Orders> {
 
 }
