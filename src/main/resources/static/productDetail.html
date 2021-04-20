@@ -28,7 +28,7 @@
                 <td th:text="${product.description}"></td>
             </div>
             <div class="des_price">
-                Totalpreis:&nbsp;<b th:text="${product.price}"></b>
+                Totalpreis:&nbsp;<b th:text="${product.price}+'€'"></b>
             </div>
             <div class="des_price">
                 Lager:&nbsp;<b id="stock" th:text="${product.stock}"></b><br/>

@@ -27,6 +27,7 @@
                     <li><a href="/user/userInfo" >用户信息</a></li>
                     <li><a href="#" >地址管理</a></li>
                     <li><a href="/wishlist/list" >Wishlist</a></li>
+                </ul>
             </div>
         </div>
 
@@ -46,13 +47,13 @@
                     <td width="25%">操作</td>
                 </tr>
 
-                <tr th:each="address:${addressList}">
-                    <td th:text="${address.id}"></td>
-                    <td th:text="${address.address}"></td>
-                    <td th:text="${address.createTime}"></td>
-                    <td th:text="${address.remark}">公司</td>
-                    <td th:if="${address.isdefault == 1}">是</td>
-                    <td th:if="${address.isdefault == 0}">否</td>
+                <tr th:each="wishlist:${wishlistList}">
+                    <td th:text="${wishlist.id}"></td>
+<!--                    <td th:text="${wishlist.address}"></td>-->
+<!--                    <td th:text="${wishlist.createTime}"></td>-->
+<!--                    <td th:text="${wishlist.remark}">公司</td>-->
+<!--                    <td th:if="${wishlist.isdefault == 1}">是</td>-->
+<!--                    <td th:if="${wishlist.isdefault == 0}">否</td>-->
                     <td>
                         <a href="">删除</a>
                         <a href="">修改</a>

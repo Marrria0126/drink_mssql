@@ -11,7 +11,6 @@ $(function(){
     $("#settlement2_totalCost").val(totalCost);
 
 
-
 });
 
 //商品数量++
