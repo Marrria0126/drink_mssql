@@ -42,9 +42,9 @@
 
                 <div th:each="order:${list}">
                     <tr class="td_bg">
-                        <td th:text="'用户名:'+${order.loginName}"></td>
-                        <td th:text="'订单号:'+${order.serialnumber}"></td>
-                        <td th:text="'地址:'+${order.userAddress}"></td>
+                        <td th:text="'Username:'+${order.loginName}"></td>
+                        <td th:text="'Bestellnummer:'+${order.serialnumber}"></td>
+                        <td th:text="'Adresse:'+${order.userAddress}"></td>
                         <td th:text="'€'+${order.cost}"></td>
                     </tr>
                     <tr>
@@ -54,11 +54,11 @@
                                    cellspacing="0" cellpadding="0">
                                 <tbody>
                                 <tr>
-                                    <td width="20%">商品名称</td>
-                                    <td width="20%">商品图片</td>
-                                    <td width="25%">数量</td>
-                                    <td width="25%">单价</td>
-                                    <td width="25%">总价</td>
+                                    <td width="20%">Produktname</td>
+                                    <td width="20%">Bild</td>
+                                    <td width="25%">Menge</td>
+                                    <td width="25%">Preis</td>
+                                    <td width="25%">Totalpreis</td>
                                 </tr>
 
                                 <tr th:each="orderDetail:${order.orderDetailVOList}">

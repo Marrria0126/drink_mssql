@@ -37,11 +37,11 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements Ca
 
     @Override
     public boolean save(Cart entity) {
-        //扣库存
+        //Abzug des Stocks
         Product product = productMapper.selectById(entity.getProductId());
         Integer stock = product.getStock() - entity.getQuantity();
         if (stock < 0) {
-            log.error("【添加购物车】库存不足！stock={}", stock);
+            log.error("Nicht in der Lager！stock={}", stock);
             throw new MallException(ResultEnum.STOCK_ERROR);
         }
         product.setStock(stock);

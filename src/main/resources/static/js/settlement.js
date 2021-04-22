@@ -1,5 +1,5 @@
 $(function(){
-    //计算总价
+    //Totalpreis berechnen
     var array = $(".qprice");
     var totalCost = 0;
     for(var i = 0;i < array.length;i++){
@@ -127,7 +127,7 @@ function subQuantity(obj){
 function removeCart(obj){
     let index = $(".delete").index(obj);
     let id = parseInt($(".id").eq(index).val());
-    if(confirm("是否确定删除?")){
+    if(confirm("Auslassen bestätigen?")){
         window.location.href = "/cart/deleteById/"+id;
     }
 }
