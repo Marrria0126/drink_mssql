@@ -43,7 +43,7 @@ function addCart(productId,price,stock) {
     console.log(stock);
     if(stock == 0){
         console.log("not enough");
-        alert("库存不足！");
+        alert("Nicht mehr auf der Lager! ");
         return false;
     }
     let quantity = 1;

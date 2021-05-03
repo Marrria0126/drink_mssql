@@ -62,7 +62,7 @@ function addQuantity(obj){
     let quantity = parseInt($(".car_ipt").eq(index).val());
     let stock = parseInt($(".productStock").eq(index).val());
     if(quantity == stock){
-        alert("库存不足！");
+        alert("Nicht mehr auf der Lager! ");
         return false;
     }
     quantity++;
@@ -97,7 +97,7 @@ function subQuantity(obj){
     let index = $(".car_btn_1").index(obj);
     let quantity = parseInt($(".car_ipt").eq(index).val());
     if(quantity == 1){
-        alert("至少选择一件商品！");
+        alert("Wählen Sie mindestens ein Produkt!");
         return false;
     }
     quantity--;
@@ -184,7 +184,7 @@ function removeCart(obj){
 function settlement2() {
     var totalCost = $("#totalprice").text();
     if(totalCost == "€0"){
-        alert("购物车为空，不能结算！");
+        alert("Der Warenkorb ist leer und kann nicht abgerechnet werden!");
         return false;
     }
     window.location.href="/cart/settlement2";

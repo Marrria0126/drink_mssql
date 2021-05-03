@@ -4931,7 +4931,7 @@ ul.p_sell li .times {
     line-height: 35px;
     overflow: hidden;
     background: url(../images/m_t.png) no-repeat 31px center;
-    background-color: #FC002A;
+    background-color: #22a3e0;
     color: #FFF;
     font-size: 14px;
     text-indent: 68px;
@@ -4988,7 +4988,7 @@ ul.p_sell li .times {
 }
 
 .left_m ul li a:hover, .left_m ul li a.now {
-    color: #ff4e00;
+    color: #22a3e0;
 }
 
 .m_right {
@@ -5549,7 +5549,7 @@ table.mem_tab tr td {
 
 .th_bg1 {
     overflow: hidden;
-    background-color: #ff4e00;
+    background-color: #22a3e0;
     text-align: left;
     color: #FFF;
     font-size: 14px;

@@ -41,7 +41,7 @@ function addCart(productId,price) {
     let stockStr = $("#stock").text();
     let stock = parseInt(stockStr);
     if(stock == 0){
-        alert("库存不足！");
+        alert("Nicht mehr auf der Lager! ");
         return false;
     }
     let quantity = $("#quantity").val();
